@@ -11,8 +11,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "REAL_CUSTOMER")
-@PrimaryKeyJoinColumn(name = "CUSTOMER_ID")
-public class RealCustomer extends Customer {
+@PrimaryKeyJoinColumn(name = "ID")
+public class RealCustomer extends Customer implements Serializable {
 
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
@@ -29,15 +29,67 @@ public class RealCustomer extends Customer {
     @Column(name = "INTERNATIONAL_ID", nullable = false)
     private String internationalID;
 
-    @OneToMany(mappedBy = "realCustomer" , cascade = {CascadeType.ALL  })
+    @OneToMany(mappedBy = "realCustomer", cascade = {CascadeType.ALL})
     private Set<LoanFile> loanFiles = new HashSet<LoanFile>(0);
 
-    public RealCustomer(String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID, Set<LoanFile> loanFiles) {
+    public RealCustomer(int customerId, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
+        this.setId(customerId);
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
         this.dateOfBirth = dateOfBirth;
         this.internationalID = internationalID;
+    }
+
+    public RealCustomer() {
+    }
+
+    //------------setter getter------------
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getInternationalID() {
+        return internationalID;
+    }
+
+    public void setInternationalID(String internationalID) {
+        this.internationalID = internationalID;
+    }
+
+    public Set<LoanFile> getLoanFiles() {
+        return loanFiles;
+    }
+
+    public void setLoanFiles(Set<LoanFile> loanFiles) {
         this.loanFiles = loanFiles;
     }
 }

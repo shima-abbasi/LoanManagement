@@ -12,5 +12,11 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">create</property>
 
+        <mapping class="dataAccess.entity.Customer"/>
+        <mapping class="dataAccess.entity.GrantCondition"/>
+        <mapping class="dataAccess.entity.LoanFile"/>
+        <mapping class="dataAccess.entity.LoanType"/>
+        <mapping class="dataAccess.entity.RealCustomer"/>
+
     </session-factory>
 </hibernate-configuration>
