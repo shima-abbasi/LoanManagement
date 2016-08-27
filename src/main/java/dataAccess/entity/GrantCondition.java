@@ -32,9 +32,10 @@ public class GrantCondition implements Serializable {
     private BigDecimal maxAmount;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
-    @JoinColumn(name = "LOAN_FILE_ID", nullable = false)
+    @JoinColumn(name = "LOAN_TYPE_ID", nullable = false)
     private LoanType loanType;
 
+//-------------setter getter---------------
     public int getGrantId() {
         return grantId;
     }

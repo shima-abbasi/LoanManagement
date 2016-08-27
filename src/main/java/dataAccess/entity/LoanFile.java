@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 /**
  * Created by Dotin school 5 on 8/21/2016.
  */
-    @Entity
-    @Table(name = "LOAN_FILE")
-    public class LoanFile implements Serializable {
+@Entity
+@Table(name = "LOAN_FILE")
+public class LoanFile implements Serializable {
 
     @Id
     @GeneratedValue
@@ -23,18 +23,18 @@ import java.math.BigDecimal;
     private BigDecimal amount;
 
     @ManyToOne
-    @JoinColumn(name = "LOAN_ID", nullable = false)
+    @JoinColumn(name = "LOAN_TYPE_ID", nullable = false)
     private LoanType loanType;
 
     @ManyToOne
-    @JoinColumn(name = "ID", nullable = false)
+    @JoinColumn(name = "CUSTOMER_ID", nullable = false)
+    private RealCustomer realCustomer;
 
-    private GrantCondition grantCondition;
-
-
+    //----constructor---------------------
     public LoanFile() {
     }
 
+    //----------setter getter--------------
     public int getLoanFileId() {
         return loanFileId;
     }
@@ -67,12 +67,5 @@ import java.math.BigDecimal;
         this.loanType = loanType;
     }
 
-    public GrantCondition getGrantCondition() {
-        return grantCondition;
-    }
-
-    public void setGrantCondition(GrantCondition grantCondition) {
-        this.grantCondition = grantCondition;
-    }
 }
 

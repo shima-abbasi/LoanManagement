@@ -2,9 +2,7 @@ package dataAccess;
 
 import dataAccess.entity.Customer;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+import util.HibernateUtil;
 
 import java.util.List;
 
@@ -13,22 +11,9 @@ import java.util.List;
  */
 public class RealCustomerCRUD {
 
-    public static SessionFactory getSessionFactory() {
-
-        Configuration configuration = new Configuration().configure();
-
-        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-
-        SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
-
-        return sessionFactory;
-
-    }
-
-
     public static Integer create(Customer e) {
 
-        Session session = getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
         session.beginTransaction();
 
@@ -40,13 +25,13 @@ public class RealCustomerCRUD {
 
         System.out.println("Successfully created " + e.toString());
 
-        return e.getId();
+        return e.getCustomerId();
 
     }
 
-    public static List<Customer> read() {
+    public static List<Customer> retrieve() {
 
-        Session session = getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
         @SuppressWarnings("unchecked")
 
@@ -62,15 +47,10 @@ public class RealCustomerCRUD {
 
     public static void update(Customer e) {
 
-        Session session = getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
         session.beginTransaction();
-
-        Customer customer = (Customer) session.load(Customer.class, e.getId());
-
-        customer.setName(e.getName());
-
-        customer.setAge(e.getAge());
+        session.update(e);
 
         session.getTransaction().commit();
 
@@ -78,11 +58,7 @@ public class RealCustomerCRUD {
 
         System.out.println("Successfully updated " + e.toString());
 
-
-
     }
-
-
 
 
 }

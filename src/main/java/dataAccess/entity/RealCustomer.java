@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "REAL_CUSTOMER")
-@PrimaryKeyJoinColumn(name = "ID")
+@PrimaryKeyJoinColumn(name = "CUSTOMER_ID")
 public class RealCustomer extends Customer implements Serializable {
 
     @Column(name = "FIRST_NAME", nullable = false)
@@ -33,7 +33,7 @@ public class RealCustomer extends Customer implements Serializable {
     private Set<LoanFile> loanFiles = new HashSet<LoanFile>(0);
 
     public RealCustomer(int customerId, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
-        this.setId(customerId);
+        this.setCustomerId(customerId);
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
@@ -81,7 +81,7 @@ public class RealCustomer extends Customer implements Serializable {
         return internationalID;
     }
 
-    public void setInternationalID(String internationalID) {
+    public void setInternationalID(String internationalI) {
         this.internationalID = internationalID;
     }
 
