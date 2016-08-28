@@ -2,7 +2,7 @@ package output;
 
 import dataAccess.entity.RealCustomer;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dotin school 5 on 8/13/2016.
@@ -58,7 +58,7 @@ public class OutputGenerator {
     }
 
 
-    public static String generateRealCustomerResult(ArrayList<RealCustomer> realCustomerResult) {
+    public static String generateRealCustomerResult(List<RealCustomer> realCustomerResult) {
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<!DOCTYPE html>");
@@ -91,9 +91,9 @@ public class OutputGenerator {
             stringBuilder.append("                            <td>" + realCustomer.getFatherName() + "</td>");
             stringBuilder.append("                            <td>" + realCustomer.getDateOfBirth() + "</td>");
             stringBuilder.append("                            <td>" + realCustomer.getInternationalID() + "</td>");
-      //      stringBuilder.append("                            <td>" + realCustomer.getCustomerNumber() + "</td>");
-      //      stringBuilder.append("                            <td><a href=DeleteRealCustomerServlet?id=" + realCustomer.getId() + " class=form>حذف</a>");
-     //       stringBuilder.append("                            <a href=RetrieveRealCustomerServlet?id=" + realCustomer.getId() + " class=form>اصلاح</a></td>");
+            stringBuilder.append("                            <td>" + realCustomer.getCustomerNumber() + "</td>");
+            stringBuilder.append("                            <td><a href=DeleteRealCustomerServlet?id=" + realCustomer.getCustomerId() + " class=form>حذف</a>");
+            stringBuilder.append("                            <a href=RetrieveRealCustomerServlet?id=" + realCustomer.getCustomerId() + " class=form>اصلاح</a></td>");
         }
         stringBuilder.append("                    </table>");
         stringBuilder.append("    <form action=\"search_real_customer.jsp\">");

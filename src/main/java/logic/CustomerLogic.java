@@ -1,9 +1,5 @@
 package logic;
-
-import dataAccess.LegalCustomerCRUD;
 import dataAccess.RealCustomerCRUD;
-import dataAccess.connectionutil.DBConnection;
-import dataAccess.entity.LegalCustomer;
 import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
@@ -12,7 +8,7 @@ import org.hibernate.Session;
 import util.HibernateUtil;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dotin school 5 on 8/7/2016.
@@ -25,7 +21,7 @@ public class CustomerLogic {
         else if (RealCustomerLogic.validateUniqueCustomer(internationalID))
             throw new NoValidatedCustomerException();
         else {
-            realCustomer.getCustomerId(generateCustomerNumber());
+            realCustomer.setCustomerNumber(generateCustomerNumber());
             realCustomer.setFirstName(firstName);
             realCustomer.setLastName(lastName);
             realCustomer.setFatherName(fatherName);
@@ -39,7 +35,7 @@ public class CustomerLogic {
 
     public static int generateCustomerNumber() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "select max (customer.customer_number) FROM customer";
+        String hql = "select max (real_customer.customer_number) from real_customer";
         Query query = session.createQuery(hql);
         int customerNumber = 0 ;
         customerNumber = (int) query.uniqueResult();
@@ -54,7 +50,7 @@ public class CustomerLogic {
     }
 
 
-    public static ArrayList<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException {
+    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException {
         return RealCustomerCRUD.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
 
     }

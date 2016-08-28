@@ -1,6 +1,5 @@
 package logic;
 import dataAccess.RealCustomerCRUD;
-import dataAccess.connectionutil.DBConnection;
 import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
@@ -36,9 +35,9 @@ public class RealCustomerLogic extends CustomerLogic {
             throw new RequiredFieldException();
         return true;
     }
-    public static RealCustomer retrieveCustomer(int id) throws SQLException {
-        return RealCustomerCRUD.retrieveCustomer(id);
-    }
+//    public static RealCustomer retrieveCustomer(int id) throws SQLException {
+//        return RealCustomerCRUD.retrieveCustomer(id);
+//    }
     public static void deleteCustomer(int id) throws SQLException {
         RealCustomerCRUD.deleteCustomer(id);
     }

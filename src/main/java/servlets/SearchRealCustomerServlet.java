@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dotin school 5 on 8/6/2016.
@@ -33,7 +33,7 @@ public class SearchRealCustomerServlet extends HttpServlet {
             String internationalID = request.getParameter("internationalID");
             String output="";
             try {
-                ArrayList<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber,firstName,lastName,fatherName,dateOfBirth , internationalID);
+                List<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber,firstName,lastName,fatherName,dateOfBirth , internationalID);
                 if(realCustomerResult.size() == 0){
                     output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد."  , "search_real_customer.jsp");
                 }else {
