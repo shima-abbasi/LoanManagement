@@ -42,6 +42,7 @@ public class CustomerLogic {
         session.beginTransaction().commit();
         if (customerNumber==0) {
             System.out.println("The first customer number created");
+
             return 1000;
         } else {
             System.out.println("customer number created");
