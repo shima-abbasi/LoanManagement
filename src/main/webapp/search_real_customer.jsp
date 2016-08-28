@@ -40,7 +40,7 @@
     </table>
     <input type="submit" class="button" value="جستجو">
 </form>
-<form action="real_customer_management.html">
+<form action="real_customer_management.jsp">
     <button class="button" type="submit"> بازگشت به صفحه قبل</button>
 </form>
 </div>

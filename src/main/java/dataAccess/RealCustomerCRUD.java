@@ -11,22 +11,14 @@ import java.util.List;
  */
 public class RealCustomerCRUD {
 
-    public static Integer create(Customer e) {
+    public static void createRealCustomer(Customer customer) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-
         session.beginTransaction();
-
-        session.save(e);
-
+        session.save(customer);
         session.getTransaction().commit();
-
         session.close();
-
-        System.out.println("Successfully created " + e.toString());
-
-        return e.getCustomerId();
-
+        System.out.println("Successfully created " + customer.toString());
     }
 
     public static List<Customer> retrieve() {

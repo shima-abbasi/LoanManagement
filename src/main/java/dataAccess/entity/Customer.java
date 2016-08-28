@@ -13,21 +13,27 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Customer implements Serializable {
 
-    @Id
-    @GeneratedValue
-    @Column(name = "CUSTOMER_ID", nullable = false, insertable = false, updatable = false, unique = true)
-    private Integer customerId;
+
+    public Integer getCustomerNumber() {
+        return customerNumber;
+    }
+
+    public void setCustomerNumber(Integer customerNumber) {
+        this.customerNumber = customerNumber;
+    }
+
+
 
 //----------constructor-----------------
     public Customer() {
 
     }
 //--------------setter getter-----------
-    public Integer getCustomerId() {
+    public int getCustomerId(int i) {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 

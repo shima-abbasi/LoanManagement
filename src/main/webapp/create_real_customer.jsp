@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,7 @@
         </table>
         <input type="submit" class="button" value="ثبت اطلاعات">
     </form>
-    <form action="real_customer_management.html">
+    <form action="real_customer_management.jsp">
         <button class="button" type="submit"> بازگشت به صفحه قبل</button>
     </form>
 </div>

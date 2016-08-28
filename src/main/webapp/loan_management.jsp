@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,13 @@
 <div class="box-in">
     <div class="content">
         <div><h1> نوع عملیات را انتخاب کنید</h1></div>
-        <form action="create_real_customer.html">
-            <button class="button" type="submit">تعریف مشتری جدید</button>
+        <form action="create_loan_type.jsp">
+            <button class="button" type="submit">تعریف تسهیلات جدید</button>
         </form>
-        <form action="search_real_customer.html">
-            <button class="button" type="submit"> جستجوی مشتری</button>
+        <form action="create_loan_file.jsp">
+            <button class="button" type="submit"> تشکیل پرونده تسهیلات</button>
         </form>
-        <form action="select_customer_type.html">
+        <form action="select-task.jsp">
             <button class="button" type="submit"> بازگشت به صفحه قبل</button>
         </form>
     </div>

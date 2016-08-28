@@ -35,7 +35,7 @@ public class SearchRealCustomerServlet extends HttpServlet {
             try {
                 ArrayList<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber,firstName,lastName,fatherName,dateOfBirth , internationalID);
                 if(realCustomerResult.size() == 0){
-                    output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد."  , "search_real_customer.html");
+                    output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد."  , "search_real_customer.jsp");
                 }else {
                     output = OutputGenerator.generateRealCustomerResult(realCustomerResult);
                 }

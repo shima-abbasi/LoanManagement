@@ -40,9 +40,9 @@ public class CreateRealCustomerServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (NoValidatedCustomerException noValidatedCustomer) {
-            output = OutputGenerator.generateMessage("مشتری با کد ملی وارد شده در سیستم موجود می باشد" , "create_real_customer.html");
+            output = OutputGenerator.generateMessage("مشتری با کد ملی وارد شده در سیستم موجود می باشد" , "create_real_customer.jsp");
         } catch (RequiredFieldException e) {
-            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید","create_real_customer.html");
+            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید","create_real_customer.jsp");
         }
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();

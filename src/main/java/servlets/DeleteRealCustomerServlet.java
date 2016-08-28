@@ -26,10 +26,10 @@ public class DeleteRealCustomerServlet extends HttpServlet {
         String output = "";
         try {
             RealCustomerLogic.deleteCustomer(id);
-            output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد" , "search_real_customer.html");
+            output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد" , "search_real_customer.jsp");
 
         } catch (SQLException e) {
-        output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد" , "search_real_customer.html");
+        output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد" , "search_real_customer.jsp");
         }
 
         response.setContentType("text/html; charset=UTF-8");

@@ -29,13 +29,13 @@ public class UpdateRealCustomerServlet extends HttpServlet {
         String output="";
         try {
             CustomerLogic.updateCustomer(id ,firstName, lastName, fatherName , dateOfBirth , internationalID);
-            output = OutputGenerator.generateMessage("اطلاعات مشتری با موفقیت اصلاح شد.","search_real_customer.html");
+            output = OutputGenerator.generateMessage("اطلاعات مشتری با موفقیت اصلاح شد.","search_real_customer.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (RequiredFieldException e) {
-            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید","search_real_customer.html");
+            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید","search_real_customer.jsp");
         } catch (NoValidatedCustomerException e) {
-            output = OutputGenerator.generateMessage("کد ملی تکراری است","search_real_customer.html");
+            output = OutputGenerator.generateMessage("کد ملی تکراری است","search_real_customer.jsp");
 
         }
         response.setContentType("text/html; charset=UTF-8");

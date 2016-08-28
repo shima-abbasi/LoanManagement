@@ -11,8 +11,15 @@ import java.util.Set;
 
 @Entity
 @Table(name = "REAL_CUSTOMER")
-@PrimaryKeyJoinColumn(name = "CUSTOMER_ID")
+
 public class RealCustomer extends Customer implements Serializable {
+    @Id
+    @GeneratedValue
+    @Column(name = "CUSTOMER_ID", nullable = false, insertable = false, updatable = false, unique = true)
+    private Integer customerId;
+
+    @Column(name = "CUSTOMER_NUMBER", nullable = false, updatable = false, unique = true)
+    private int customerNumber;
 
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
