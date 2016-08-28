@@ -4,7 +4,7 @@
     <data-source name="hibernate.cfg.xml/Hibernate" uuid="5b1d7686-12ee-48e7-80b3-c2785474489e">
       <first-sync>true</first-sync>
       <user-name>root</user-name>
-      <user-password>dfc0dfcedfc8dfc9df90dfc7dfd3dfd9dfdbdfc6df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df99df99df9adf9cdf85dfdedfcfdfd9dfdedf95dfdfdfd9dfcfdfffdfc4dfc3dfc9dfc5dfcedfcfdf97dfdedfd8dfdfdfcfdf8cdfc9dfc2dfcbdfd8dfcbdfc9dfdedfcfdfd8dfefdfc4dfc9dfc5dfcedfc3dfc4dfcddf97dfffdffedfecdf87df92df8cdfdfdfd9dfcfdff9dff9dfe6df97dfccdfcbdfc6dfd9dfcf</user-password>
+      <user-password>dfc0dfcedfc8dfc9df90dfc7dfd3dfd9dfdbdfc6df90df85df85dfc6dfc5dfc9dfcbdfc6dfc2dfc5dfd9dfdedf90df99df99df9adf9cdf85dfc6dfc5dfcbdfc4dfcbdfc9dfc9dfc5dfdfdfc4dfdedf95dfdfdfd9dfcfdfffdfc4dfc3dfc9dfc5dfcedfcfdf97dfdedfd8dfdfdfcfdf8cdfc9dfc2dfcbdfd8dfcbdfc9dfdedfcfdfd8dfefdfc4dfc9dfc5dfcedfc3dfc4dfcddf97dfffdffedfecdf87df92df8cdfdfdfd9dfcfdff9dff9dfe6df97dfccdfcbdfc6dfd9dfcf</user-password>
     </data-source>
   </component>
 </project>

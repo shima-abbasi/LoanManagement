@@ -17,15 +17,9 @@
     <servlet-class>servlets.DeleteRealCustomerServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>RetrieveRealCustomerServlet</servlet-name>
-    <servlet-class>servlets.RetrieveRealCustomerServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>UpdateRealCustomerServlet</servlet-name>
     <servlet-class>servlets.UpdateRealCustomerServlet</servlet-class>
   </servlet>
-
-
 
   <servlet-mapping>
     <servlet-name>CreateRealCustomerServlet</servlet-name>
@@ -38,10 +32,6 @@
   <servlet-mapping>
     <servlet-name>DeleteRealCustomerServlet</servlet-name>
     <url-pattern>/DeleteRealCustomerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RetrieveRealCustomerServlet</servlet-name>
-    <url-pattern>/RetrieveRealCustomerServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdateRealCustomerServlet</servlet-name>
