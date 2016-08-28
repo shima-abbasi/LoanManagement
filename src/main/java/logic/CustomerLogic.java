@@ -33,6 +33,7 @@ public class CustomerLogic {
     }
 
 
+
     public static int generateCustomerNumber() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String hql = "select max (real_customer.customer_number) from real_customer";
