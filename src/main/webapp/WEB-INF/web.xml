@@ -24,6 +24,12 @@
     <servlet-name>CreateLoanTypeServlet</servlet-name>
     <servlet-class>servlets.CreateLoanTypeServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CreateGrantConditionServlet</servlet-name>
+    <servlet-class>servlets.CreateGrantConditionServlet</servlet-class>
+  </servlet>
+
+
 
   <servlet-mapping>
     <servlet-name>CreateRealCustomerServlet</servlet-name>
@@ -44,6 +50,10 @@
   <servlet-mapping>
     <servlet-name>CreateLoanTypeServlet</servlet-name>
     <url-pattern>/CreateLoanTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateGrantConditionServlet</servlet-name>
+    <url-pattern>/CreateGrantConditionServlet</url-pattern>
   </servlet-mapping>
 
 

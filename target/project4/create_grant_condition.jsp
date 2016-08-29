@@ -13,15 +13,15 @@
     <br>
     <table align="center">
         <%
-            LoanType loanTypeObject = (LoanType) request.getAttribute("LoanType");
+            LoanType loanType = (LoanType) request.getAttribute("LoanType");
         %>
         <tr>
             <td>نام تسهیلات</td>
-            <td><%=loanTypeObject.getLoanName()%></td>
+            <td><%=loanType.getLoanName()%></td>
         </tr>
         <tr>
             <td>نرخ سود تسهیلات</td>
-            <td><%=loanTypeObject.getInterestRate()%></td>
+            <td><%=loanType.getInterestRate()%></td>
         </tr>
     </table>
     <br>
