@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -8,7 +9,7 @@
 <body>
 <div id="LoginHeader"></div>
 <div>
-    <form action="select_customer_type.jsp">
+    <form action="select-task.jsp">
         <button id="Loginbutton"><span>ورود به سامانه </span></button>
     </form>
 </div>
