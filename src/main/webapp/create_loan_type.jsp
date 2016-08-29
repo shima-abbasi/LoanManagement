@@ -10,7 +10,7 @@
     <br>
     <h1>لطفا تسهیلات مورد نظر خود را تعریف کنید</h1>
     <br>
-    <form action="/createLoanTypeServlet" method="post">
+    <form action="CreateLoanTypeServlet" method="post">
         <table align="center">
             <tr>
                 <td> نام نوع تسهیلات </td>

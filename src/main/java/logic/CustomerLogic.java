@@ -17,7 +17,7 @@ public class CustomerLogic {
     public static RealCustomer setCustomerInfo(String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException, NoValidatedCustomerException, RequiredFieldException {
         RealCustomer realCustomer = new RealCustomer();
         if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
-            throw new RequiredFieldException();
+            throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
         else if (RealCustomerLogic.validateUniqueCustomer(internationalID))
             throw new NoValidatedCustomerException();
         else {
@@ -59,7 +59,7 @@ public class CustomerLogic {
 
     public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException, RequiredFieldException, NoValidatedCustomerException {
         if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
-            throw new RequiredFieldException();
+            throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
         if(!RealCustomerLogic.validateUniqueCustomer(internationalID))
             throw  new NoValidatedCustomerException();
         else

@@ -1,14 +1,11 @@
 package logic;
 import dataAccess.RealCustomerCRUD;
-import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class RealCustomerLogic extends CustomerLogic {
     }
     public  static boolean checkField( String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws RequiredFieldException, NoValidatedCustomerException, SQLException {
         if (firstName.trim().length() == 0 | lastName.trim().length() == 0 | fatherName.trim().length() == 0 | dateOfBirth.trim().length() == 0 | internationalID.trim().length() == 0)
-            throw new RequiredFieldException();
+            throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
         return true;
     }
 //    public static RealCustomer retrieveCustomer(int id) throws SQLException {

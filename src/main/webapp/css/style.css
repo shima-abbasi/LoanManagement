@@ -210,3 +210,20 @@ body {
 {
     border-bottom: 1px solid #ddd;
 }
+
+
+
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}
+
+td {
+    padding:2px;
+}

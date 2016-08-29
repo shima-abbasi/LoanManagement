@@ -20,6 +20,10 @@
     <servlet-name>UpdateRealCustomerServlet</servlet-name>
     <servlet-class>servlets.UpdateRealCustomerServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CreateLoanTypeServlet</servlet-name>
+    <servlet-class>servlets.CreateLoanTypeServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>CreateRealCustomerServlet</servlet-name>
@@ -36,6 +40,10 @@
   <servlet-mapping>
     <servlet-name>UpdateRealCustomerServlet</servlet-name>
     <url-pattern>/UpdateRealCustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CreateLoanTypeServlet</servlet-name>
+    <url-pattern>/CreateLoanTypeServlet</url-pattern>
   </servlet-mapping>
 
 

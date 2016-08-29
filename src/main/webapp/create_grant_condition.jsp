@@ -11,7 +11,7 @@
 <div class=box-in>
     <br>
     <br>
-    <table>
+    <table align="center">
         <%
             LoanType loanTypeObject = (LoanType) request.getAttribute("LoanType");
         %>
@@ -25,13 +25,13 @@
         </tr>
     </table>
     <br>
-    <a href="createLoanType.jsp" class=form>تصحیح</a>
+    <a href="create_loan_type.jsp" class=form>تصحیح</a>
     <br>
     <hr>
     <br>
     <h3>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید</h3>
     <br>
-    <table>
+    <table align ="center">
         <tr>
             <td> نام</td>
             <td><input type="text" id="grantName" ></td>
