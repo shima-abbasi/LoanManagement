@@ -2,6 +2,7 @@ package servlets;
 
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
+import exceptions.OutOfRangeException;
 import logic.GrantConditionLogic;
 
 import javax.servlet.RequestDispatcher;
@@ -39,7 +40,7 @@ public class CreateGrantConditionServlet extends HttpServlet {
                 grantConditions.add(grantConditionObject);
             }
 
-            GrantConditionLogic.createGrantCondition( new LoanType(loanName, interestRate), grantConditions);
+            GrantConditionLogic.createLoanType( new LoanType(loanName, interestRate), grantConditions);
 
             request.setAttribute("header", "عملیات موفق");
             request.setAttribute("text","نوع تسهیلات جدید با موفقیت ثبت شد!");
@@ -52,6 +53,8 @@ public class CreateGrantConditionServlet extends HttpServlet {
             request.setAttribute("url", "createLoanType.jsp");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/info.jsp");
             dispatcher.forward(request , response);
+        } catch (OutOfRangeException e) {
+            e.printStackTrace();
         }
 
 

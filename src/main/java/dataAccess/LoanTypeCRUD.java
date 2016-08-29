@@ -13,7 +13,7 @@ import java.util.Set;
  * Created by Dotin school 5 on 8/29/2016.
  */
 public class LoanTypeCRUD {
-    public static void createLoanType(LoanType loanType, ArrayList<GrantCondition> grantConditions) {
+    public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             Transaction tx = session.beginTransaction();
