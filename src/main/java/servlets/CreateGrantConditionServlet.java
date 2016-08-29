@@ -1,6 +1,8 @@
 package servlets;
 
 import dataAccess.entity.GrantCondition;
+import dataAccess.entity.LoanType;
+import logic.GrantConditionLogic;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,7 +39,7 @@ public class CreateGrantConditionServlet extends HttpServlet {
                 grantConditions.add(grantConditionObject);
             }
 
-            GrantConditionLogic.create(  new LoanType(loanName, interestRate), grantConditions);
+            GrantConditionLogic.createGrantCondition( new LoanType(loanName, interestRate), grantConditions);
 
             request.setAttribute("header", "عملیات موفق");
             request.setAttribute("text","نوع تسهیلات جدید با موفقیت ثبت شد!");
