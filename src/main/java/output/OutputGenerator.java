@@ -93,7 +93,7 @@ public class OutputGenerator {
             stringBuilder.append("                            <td>" + realCustomer.getInternationalID() + "</td>");
             stringBuilder.append("                            <td>" + realCustomer.getCustomerNumber() + "</td>");
             stringBuilder.append("                            <td><a href=DeleteRealCustomerServlet?id=" + realCustomer.getCustomerId() + " class=form>حذف</a>");
-      //      stringBuilder.append("                            <a href=RetrieveRealCustomerServlet?id=" + realCustomer.getCustomerId() + " class=form>اصلاح</a></td>");
+            stringBuilder.append("                            <a href=RetrieveRealCustomerServlet?id=" + realCustomer.getCustomerId() + " class=form>اصلاح</a></td>");
         }
         stringBuilder.append("                    </table>");
         stringBuilder.append("    <form action=\"search_real_customer.jsp\">");

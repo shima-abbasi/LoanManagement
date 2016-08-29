@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="showTable.js"></script>
+    <script type="text/javascript" src="table_script.js"></script>
     <title>تعریف شروط اعطا</title>
 </head>
 <body>
@@ -24,12 +24,9 @@
             <td><%=loanType.getInterestRate()%></td>
         </tr>
     </table>
-    <br>
-    <a href="create_loan_type.jsp" class=form>تصحیح</a>
-    <br>
     <hr>
     <br>
-    <h3>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید</h3>
+    <h2>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید</h2>
     <br>
     <table align ="center">
         <tr>
@@ -58,7 +55,7 @@
     <br>
     <hr>
     <br>
-    <form action="/GrantConditionServlet" method="get">
+    <form action="CreateGrantConditionServlet" method="get">
         <input type="hidden" name="loanName" value="<%= request.getParameter("loanName")%>">
         <input type="hidden" name="interestRate" value="<%= request.getParameter("interestRate")%>">
         <table class="result-table" id="GrantConditionShowTable"></table>

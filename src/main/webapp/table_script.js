@@ -24,7 +24,7 @@ function addRow() {
         row.insertCell(3).innerHTML = '<input type="text" name="maxDuration' + rowNumber + '" value="' + maxDuration.value + '" readonly>';
         row.insertCell(4).innerHTML = '<input type="text" name="minAmount' + rowNumber + '" value="' + minAmount.value + '" readonly>';
         row.insertCell(5).innerHTML = '<input type="text" name="maxAmount' + rowNumber + '" value="' + maxAmount.value + '" readonly>';
-        row.insertCell(6).innerHTML = '<button class="button" onClick="deleteRow(this)">حذف شرط</button>';
+        row.insertCell(6).innerHTML = '<button  onClick="deleteRow(this)">حذف شرط</button>';
     }
     addFooter();
     document.getElementById("grantName").value = "";
@@ -85,7 +85,7 @@ function addFooter() {
         var footer = table.createTFoot();
         var footerRow = footer.insertRow(0);
         var cell = footerRow.insertCell(0);
-        cell.innerHTML = '<input type="submit" class="button" value="ثبت" > <input type="text" name="rowNumber" value="' + table.rows.length + '" hidden>';
+        cell.innerHTML = '<input type="submit" class="button" value=" ثبت شرایط " > <input type="text" name="rowNumber" value="' + table.rows.length + '" hidden>';
     }
 }
 

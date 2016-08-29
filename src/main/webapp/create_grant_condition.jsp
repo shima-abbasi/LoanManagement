@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="showTable.js"></script>
+    <script type="text/javascript" src="table_script.js"></script>
     <title>تعریف شروط اعطا</title>
 </head>
 <body>
