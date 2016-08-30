@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by Dotin school 5 on 8/29/2016.
  */
-public class CreateLoanTypeServlet extends HttpServlet {
+public class LoanTypeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF8");

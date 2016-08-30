@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>CreateRealCustomerServlet</servlet-name>
-    <servlet-class>servlets.CreateRealCustomerServlet</servlet-class>
+    <servlet-class>servlets.RealCustomerServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>SearchRealCustomerServlet</servlet-name>
@@ -22,11 +22,11 @@
   </servlet>
   <servlet>
     <servlet-name>CreateLoanTypeServlet</servlet-name>
-    <servlet-class>servlets.CreateLoanTypeServlet</servlet-class>
+    <servlet-class>servlets.LoanTypeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>CreateGrantConditionServlet</servlet-name>
-    <servlet-class>servlets.CreateGrantConditionServlet</servlet-class>
+    <servlet-class>servlets.GrantConditionServlet</servlet-class>
   </servlet>
 
 

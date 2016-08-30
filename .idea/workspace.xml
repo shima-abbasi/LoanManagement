@@ -7,16 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/logic/CustomerLogic.class" afterPath="$PROJECT_DIR$/target/classes/logic/CustomerLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/logic/RealCustomerLogic.class" afterPath="$PROJECT_DIR$/target/classes/logic/RealCustomerLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlets/CreateRealCustomerServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlets/CreateRealCustomerServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/CustomerLogic.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/CustomerLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/RealCustomerLogic.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/RealCustomerLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/servlets/CreateRealCustomerServlet.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/servlets/CreateRealCustomerServlet.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/servlets/CreateRealCustomerServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/servlets/DeleteRealCustomerServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/servlets/SearchRealCustomerServlet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/servlets/UpdateRealCustomerServlet.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/servlets/CreateGrantConditionServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/servlets/CreateLoanTypeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dataAccess/entity/RealCustomer.class" afterPath="$PROJECT_DIR$/target/classes/dataAccess/entity/RealCustomer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/dataAccess/entity/RealCustomer.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/dataAccess/entity/RealCustomer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dataAccess/entity/RealCustomer.java" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/entity/RealCustomer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" afterPath="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" afterPath="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,44 +41,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CreateGrantConditionServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/CreateGrantConditionServlet.java">
+      <file leaf-file-name="GrantConditionServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="367">
               <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1131#1147#0" expanded="true" />
+                <element signature="e#1125#1141#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateRealCustomerServlet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/CreateRealCustomerServlet.java">
+      <file leaf-file-name="RealCustomerServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+            <state relative-caret-position="357">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UpdateRealCustomerServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/UpdateRealCustomerServlet.java">
+      <file leaf-file-name="create_loan_type.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_real_customer.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="10" column="31" selection-start-line="9" selection-start-column="3" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="459">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -203,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/loan_management.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/entity/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/SearchRealCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
@@ -230,7 +220,9 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/entity/RealCustomer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/SearchRealCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/CreateRealCustomerServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
       </list>
     </option>
   </component>
@@ -1152,7 +1144,7 @@
       <workItem from="1472362715942" duration="12662000" />
       <workItem from="1472378555287" duration="9072000" />
       <workItem from="1472449896726" duration="22827000" />
-      <workItem from="1472541814455" duration="18080000" />
+      <workItem from="1472541814455" duration="19860000" />
     </task>
     <task id="LOCAL-00001" summary="commit:D">
       <created>1471764793293</created>
@@ -1301,11 +1293,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472557590192</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="yeyyyyyyyy\m/">
+      <created>1472562494205</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1472562494205</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106865000" />
+    <option name="totallyTimeSpent" value="108645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1329,6 +1328,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28984576" sideWeight="0.9289694" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2896071" sideWeight="0.07103064" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1340,7 +1340,6 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1369,7 +1368,7 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/CreateLoanTypeServlet.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java</url>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1386,8 +1385,8 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/CreateRealCustomerServlet.java</url>
-          <line>32</line>
+          <url>file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java</url>
+          <line>52</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
@@ -1414,14 +1413,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/entity/Customer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RetrieveRealCustomerServlet.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/entity/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/DeleteRealCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/entity/LoanFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
@@ -1571,14 +1562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -1613,14 +1596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/SearchRealCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/RequiredFieldException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1648,7 +1623,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/CreateLoanTypeServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
@@ -1695,7 +1670,7 @@
         <state relative-caret-position="364">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
-            <element signature="e#1857#1858#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1716,21 +1691,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/UpdateRealCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/CreateGrantConditionServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1131#1147#0" expanded="true" />
+            <element signature="e#1125#1141#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1799,10 +1766,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/CreateRealCustomerServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/DeleteRealCustomerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="47" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+        <state relative-caret-position="289">
+          <caret line="26" column="13" selection-start-line="23" selection-start-column="0" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/UpdateRealCustomerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/SearchRealCustomerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
           <folding />
         </state>
       </provider>

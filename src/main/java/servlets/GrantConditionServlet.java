@@ -19,7 +19,7 @@ import java.util.Set;
 /**
  * Created by Dotin school 5 on 8/29/2016.
  */
-public class CreateGrantConditionServlet extends HttpServlet {
+public class GrantConditionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             request.setCharacterEncoding("UTF8");
