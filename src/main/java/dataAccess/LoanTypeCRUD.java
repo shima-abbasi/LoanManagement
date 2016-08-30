@@ -17,9 +17,13 @@ public class LoanTypeCRUD {
     public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            Transaction transaction = session.beginTransaction();
-            loanType.setGrantConditions(grantConditions);
-            transaction.commit();
+            session.beginTransaction();
+            session.save(loanType);
+            for(GrantCondition grantCondition : grantConditions){
+                grantCondition.setLoanType(loanType);
+                session.save(grantCondition);
+            }
+            session.getTransaction().commit();
         } catch (RuntimeException e) {
             e.printStackTrace();
         }

@@ -9,11 +9,9 @@
 <body>
 <div class=box-in>
     <br>
-    <h2><%=request.getAttribute("header")%>
-    </h2>
     <br>
-    <p><%=request.getAttribute("text")%>
-    </p>
+    <h1><%=request.getAttribute("text")%>
+    </h1>
     <br>
     <form action="<%=request.getAttribute("url")%>">
         <button class="button" type="submit"> بازگشت به صفحه قبل</button>
