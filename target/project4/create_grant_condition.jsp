@@ -1,4 +1,5 @@
 <%@ page import="dataAccess.entity.LoanType" %>
+<%@ page import="exceptions.OutOfRangeException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -31,27 +32,27 @@
     <table align ="center">
         <tr>
             <td> نام</td>
-            <td><input type="text" id="grantName" ></td>
+            <td><input type="text" id="grantName" required="required" oninvalid ="alert('لطفا نام شرط اعطا را وارد کنید')"/></td>
         </tr>
         <tr>
             <td> حداقل مدت قرارداد</td>
-            <td><input type="text" id="minDuration" ></td>
+            <td><input type="text" id="minDuration" required="required" oninvalid="alert('لطفا حداقل مدت قرارداد را وارد کنید')"/> ></td>
         </tr>
         <tr>
             <td> حداکثر مدت قرارداد</td>
-            <td><input type="text" id="maxDuration" ></td>
+            <td><input type="text" id="maxDuration" required="required" oninvalid="alert('لطفا حداکثر مدت قرارداد را وارد کنید')"/></td>
         </tr>
         <tr>
             <td> حداقل مبلغ قرارداد</td>
-            <td><input type="text" id="minAmount" ></td>
+            <td><input type="text" id="minAmount" required="required" oninvalid="alert('لطفا حداقل مدت قرارداد را وارد کنید')"/></td>
         </tr>
         <tr>
             <td> حداکثر مبلغ قرارداد</td>
-            <td><input type="text" id="maxAmount" ></td>
+            <td><input type="text" id="maxAmount" required="required" oninvalid="alert('لطفا حداکثر مدت قرارداد را وارد کنید')"/></td>
         </tr>
     </table>
     <br>
-    <input class="button" type="submit" value="اضافه کردن شروط" onclick="addRow()">
+    <input class="button" type="submit" value="اضافه کردن شروط"  onclick="addRow()">
     <br>
     <hr>
     <br>
