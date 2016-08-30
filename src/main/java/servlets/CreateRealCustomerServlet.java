@@ -19,11 +19,6 @@ import java.sql.SQLException;
  */
 public class CreateRealCustomerServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest theRequest, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest theRequest, HttpServletResponse response)
             throws ServletException, IOException {
         theRequest.setCharacterEncoding("UTF-8");
