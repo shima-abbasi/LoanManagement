@@ -9,18 +9,6 @@
     <servlet-class>servlets.RealCustomerServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>SearchRealCustomerServlet</servlet-name>
-    <servlet-class>servlets.SearchRealCustomerServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>DeleteRealCustomerServlet</servlet-name>
-    <servlet-class>servlets.DeleteRealCustomerServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UpdateRealCustomerServlet</servlet-name>
-    <servlet-class>servlets.UpdateRealCustomerServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>CreateLoanTypeServlet</servlet-name>
     <servlet-class>servlets.LoanTypeServlet</servlet-class>
   </servlet>
@@ -34,18 +22,6 @@
   <servlet-mapping>
     <servlet-name>CreateRealCustomerServlet</servlet-name>
     <url-pattern>/CreateRealCustomerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>SearchRealCustomerServlet</servlet-name>
-    <url-pattern>/SearchRealCustomerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DeleteRealCustomerServlet</servlet-name>
-    <url-pattern>/DeleteRealCustomerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UpdateRealCustomerServlet</servlet-name>
-    <url-pattern>/UpdateRealCustomerServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CreateLoanTypeServlet</servlet-name>

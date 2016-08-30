@@ -11,7 +11,7 @@
 <br>
 <h1>لطفا اطلاعات مشتری را وارد نمایید</h1>
 <br>
-<form action="SearchRealCustomerServlet" method="get">
+<form action="RealCustomerServlet" method="get">
     <table align="center">
         <tr>
             <td> شماره مشتری</td>
