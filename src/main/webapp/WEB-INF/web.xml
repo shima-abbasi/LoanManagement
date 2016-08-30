@@ -5,31 +5,31 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-    <servlet-name>CreateRealCustomerServlet</servlet-name>
+    <servlet-name>RealCustomerServlet</servlet-name>
     <servlet-class>servlets.RealCustomerServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>CreateLoanTypeServlet</servlet-name>
+    <servlet-name>LoanTypeServlet</servlet-name>
     <servlet-class>servlets.LoanTypeServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>CreateGrantConditionServlet</servlet-name>
+    <servlet-name>GrantConditionServlet</servlet-name>
     <servlet-class>servlets.GrantConditionServlet</servlet-class>
   </servlet>
 
 
 
   <servlet-mapping>
-    <servlet-name>CreateRealCustomerServlet</servlet-name>
-    <url-pattern>/CreateRealCustomerServlet</url-pattern>
+    <servlet-name>RealCustomerServlet</servlet-name>
+    <url-pattern>/RealCustomerServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>CreateLoanTypeServlet</servlet-name>
-    <url-pattern>/CreateLoanTypeServlet</url-pattern>
+    <servlet-name>LoanTypeServlet</servlet-name>
+    <url-pattern>/LoanTypeServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>CreateGrantConditionServlet</servlet-name>
-    <url-pattern>/CreateGrantConditionServlet</url-pattern>
+    <servlet-name>GrantConditionServlet</servlet-name>
+    <url-pattern>/GrantConditionServlet</url-pattern>
   </servlet-mapping>
 
 
