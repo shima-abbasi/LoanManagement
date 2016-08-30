@@ -31,32 +31,27 @@ public class CreateGrantConditionServlet extends HttpServlet {
             Set<GrantCondition> grantConditions = new HashSet<GrantCondition>();
 
             for (int i = 1; i < rowNumber - 1; i++) {
-                GrantCondition grantConditionObject = new GrantCondition();
-                grantConditionObject.setGrantName(request.getParameter("grantName" + i));
-                grantConditionObject.setMinDuration(Integer.parseInt(request.getParameter("minDuration" + i)));
-                grantConditionObject.setMaxDuration(Integer.parseInt((request.getParameter("maxDuration" + i))));
-                grantConditionObject.setMinAmount(new BigDecimal((request.getParameter("minAmount" + i))));
-                grantConditionObject.setMaxAmount(new BigDecimal((request.getParameter("maxAmount" + i))));
-                grantConditions.add(grantConditionObject);
+                GrantCondition grantCondition = new GrantCondition();
+                grantCondition.setGrantName(request.getParameter("grantName" + i));
+                grantCondition.setMinDuration(Integer.parseInt(request.getParameter("minDuration" + i)));
+                grantCondition.setMaxDuration(Integer.parseInt((request.getParameter("maxDuration" + i))));
+                grantCondition.setMinAmount(new BigDecimal((request.getParameter("minAmount" + i))));
+                grantCondition.setMaxAmount(new BigDecimal((request.getParameter("maxAmount" + i))));
+                grantConditions.add(grantCondition);
             }
 
             GrantConditionLogic.createLoanType( new LoanType(loanName, interestRate), grantConditions);
 
             request.setAttribute("header", "عملیات موفق");
             request.setAttribute("text","نوع تسهیلات جدید با موفقیت ثبت شد!");
-            request.setAttribute("url", "createLoanType.jsp");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/info.jsp");
-            dispatcher.forward(request , response);
+            request.setAttribute("url", "/create_loan_type.jsp");
         } catch (NotSupportedException e) {
             request.setAttribute("header","عملیات ناموفق");
             request.setAttribute("text","خطا در ذخیره نوع تسهیلات. لطفا مجددا تلاش کنید!" + "\n" + e.getMessage());
-            request.setAttribute("url", "createLoanType.jsp");
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/info.jsp");
-            dispatcher.forward(request , response);
+            request.setAttribute("url", "/create_loan_type.jsp");
         } catch (OutOfRangeException e) {
             e.printStackTrace();
         }
-
-
+        getServletConfig().getServletContext().getRequestDispatcher("/info.jsp").forward(request, response);
     }
 }

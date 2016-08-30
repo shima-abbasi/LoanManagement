@@ -2,17 +2,12 @@
 <html lang=fa>
 <head>
     <meta charset=UTF-8>
-    <link href=css/Style.css rel=stylesheet>
+    <link href=css/style.css rel=stylesheet>
     <title><%=request.getAttribute("header")%>
     </title>
 </head>
 <body>
-<div class=title>
-    <h1><%=request.getAttribute("header")%>
-    </h1>
-</div>
-
-<div class=main-box>
+<div class=box-in>
     <br>
     <h2><%=request.getAttribute("header")%>
     </h2>
@@ -20,9 +15,10 @@
     <p><%=request.getAttribute("text")%>
     </p>
     <br>
-    <a href="<%=request.getAttribute("url")%>" class="form">بازگشت </a>
+    <form action="<%=request.getAttribute("url")%>">
+        <button class="button" type="submit"> بازگشت به صفحه قبل</button>
+    </form>
 </div>
-
 </body>
 </html>
 

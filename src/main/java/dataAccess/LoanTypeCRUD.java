@@ -3,6 +3,7 @@ package dataAccess;
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
@@ -16,12 +17,11 @@ public class LoanTypeCRUD {
     public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            Transaction tx = session.beginTransaction();
+            Transaction transaction = session.beginTransaction();
             loanType.setGrantConditions(grantConditions);
-            session.save(loanType);
-            tx.commit();
-        } finally {
-            session.close();
+            transaction.commit();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
         }
     }
 }
