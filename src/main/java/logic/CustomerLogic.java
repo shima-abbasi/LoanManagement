@@ -18,7 +18,7 @@ public class CustomerLogic {
         RealCustomer realCustomer = new RealCustomer();
         if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
             throw new RequiredFieldException("وارد کردن تمام فیلدها الزامی است");
-        else if (RealCustomerLogic.validateUniqueCustomer(internationalID))
+        else if (!RealCustomerLogic.validateUniqueCustomer(internationalID))
             throw new NoValidatedCustomerException();
         else {
             realCustomer.setCustomerNumber(generateCustomerNumber());
@@ -36,18 +36,16 @@ public class CustomerLogic {
 
     public static int generateCustomerNumber() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "select max (real_customer.customer_number) from real_customer";
+        String hql = "select max (rc.customerNumber) from RealCustomer rc";
         Query query = session.createQuery(hql);
-        int customerNumber = 0 ;
-        customerNumber = (int) query.uniqueResult();
-        session.beginTransaction().commit();
-        if (customerNumber==0) {
+        Object customerNumber = query.uniqueResult();
+        if (customerNumber==null) {
             System.out.println("The first customer number created");
 
             return 1000;
         } else {
             System.out.println("customer number created");
-            return customerNumber + 1;
+            return Integer.parseInt((String) customerNumber) + 1;
         }
     }
 

@@ -104,7 +104,7 @@ public class RealCustomer  implements Serializable {
         return internationalID;
     }
 
-    public void setInternationalID(String internationalI) {
+    public void setInternationalID(String internationalID) {
         this.internationalID = internationalID;
     }
 

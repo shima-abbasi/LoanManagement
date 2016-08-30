@@ -16,12 +16,10 @@ public class RealCustomerLogic extends CustomerLogic {
 
     public static boolean validateUniqueCustomer(String internationalID) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("FROM real_customer where international_id=:int_id");
-        query.setParameter("int_id", internationalID);
-        query.executeUpdate();
+        Query query = session.createQuery("select realCustomer.internationalID from RealCustomer as realCustomer where realCustomer.internationalID=:int_id ");
+       query.setParameter("int_id", internationalID);
         List results = query.list();
-        //session.beginTransaction().commit();
-        if (results.size()==1) {
+        if (results.size()>0) {
             session.close();
             return false;
         }
