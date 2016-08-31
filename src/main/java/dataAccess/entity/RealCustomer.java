@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class RealCustomer  implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID", nullable = false, insertable = false, updatable = false, unique = true)
     private Integer customerId;
 

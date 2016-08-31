@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class LoanFile implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LOAN_FILE_ID", nullable = false)
     private int loanFileId;
 

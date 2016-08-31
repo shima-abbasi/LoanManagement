@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class GrantCondition implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "GRANT_ID", nullable = false)
     private int grantId;
 

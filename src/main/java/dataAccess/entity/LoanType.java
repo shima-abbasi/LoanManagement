@@ -13,7 +13,7 @@ import java.util.Set;
 public class LoanType implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LOAN_TYPE_ID")
     private Integer loanTypeId;
 
