@@ -23,13 +23,13 @@ public class RealCustomerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
 
         String action = request.getParameter("action");
-        request.setCharacterEncoding("UTF-8");
         if ("create".equalsIgnoreCase(action)) {
             createRealCustomer(request, response);
         }
-        if ("retrieve".equalsIgnoreCase(action)) {
+        if ("search".equalsIgnoreCase(action)) {
             searchRealCustomer(request, response);
         }
         if ("delete".equalsIgnoreCase(action)) {

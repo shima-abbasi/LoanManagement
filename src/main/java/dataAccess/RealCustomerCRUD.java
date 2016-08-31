@@ -50,7 +50,7 @@ public  static  void  deleteCustomer (int id)
 {
     Session session = HibernateUtil.getSessionFactory().openSession();
     session.beginTransaction();
-    RealCustomer realCustomer = (RealCustomer) session.load(RealCustomer.class, id);
+    RealCustomer realCustomer = session.get(RealCustomer.class, id);
     session.delete(realCustomer);
     System.out.println("Deleted Successfully");
     session.getTransaction().commit();
@@ -61,45 +61,45 @@ public  static  void  deleteCustomer (int id)
             lastName, String fatherName, String dateOfBirth, String internationalID) {
         StringBuilder stringBuilder = new StringBuilder();
         if (customerNumber!=""| firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
-            stringBuilder.append("SELECT * FROM account.real_customer rc JOIN account.customer c ON c.id = rc.id WHERE");
+            stringBuilder.append("FROM RealCustomer rc where");
             int count = 0;
             if (customerNumber != "") {
-                stringBuilder.append(" c.customer_number ='" + customerNumber + "'");
+                stringBuilder.append(" rc.customerNumber ='" + customerNumber + "'");
                 count++;
             }
             if (firstName != "") {
                 if (count == 1)
-                    stringBuilder.append(" AND rc.first_name ='" + firstName + "'");
-                else stringBuilder.append(" rc.first_name ='" + firstName + "'");
+                    stringBuilder.append(" AND rc.firstName ='" + firstName + "'");
+                else stringBuilder.append(" rc.firstName ='" + firstName + "'");
                 count++;
             }
             if (lastName != "") {
                 if (count == 2)
-                    stringBuilder.append(" AND rc.last_name ='" + lastName + "'");
-                else stringBuilder.append(" rc.last_name ='" + lastName + "'");
+                    stringBuilder.append(" AND rc.lastName ='" + lastName + "'");
+                else stringBuilder.append(" rc.lastName ='" + lastName + "'");
                 count++;
             }
             if (fatherName != "") {
                 if (count == 3)
-                    stringBuilder.append(" AND rc.father_name ='" + fatherName + "'");
-                else stringBuilder.append(" rc.father_name ='" + fatherName + "'");
+                    stringBuilder.append(" AND rc.fatherName ='" + fatherName + "'");
+                else stringBuilder.append(" rc.fatherName ='" + fatherName + "'");
                 count++;
             }
             if (dateOfBirth != "") {
                 if (count == 4)
-                    stringBuilder.append(" AND rc.date_of_birth ='" + dateOfBirth + "'");
-                else stringBuilder.append(" rc.date_of_birth ='" + dateOfBirth + "'");
+                    stringBuilder.append(" AND rc.dateOfBirth ='" + dateOfBirth + "'");
+                else stringBuilder.append(" rc.dateOfBirth ='" + dateOfBirth + "'");
 
                 count++;
             }
             if (internationalID != "") {
                 if (count == 5)
-                    stringBuilder.append("AND rc.international_id ='" + internationalID + "'");
-                else stringBuilder.append(" rc.international_id ='" + internationalID + "'");
+                    stringBuilder.append("AND rc.internationalID ='" + internationalID + "'");
+                else stringBuilder.append(" rc.internationalID ='" + internationalID + "'");
 
             }
         } else
-            stringBuilder.append("SELECT * FROM account.real_customer rc JOIN account.customer c ON c.id = rc.id");
+            stringBuilder.append("FROM RealCustomer");
         return stringBuilder.toString();
     }
 

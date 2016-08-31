@@ -38,20 +38,21 @@ public class CustomerLogic {
         Session session = HibernateUtil.getSessionFactory().openSession();
         String hql = "select max (rc.customerNumber) from RealCustomer rc";
         Query query = session.createQuery(hql);
-        Object customerNumber = query.uniqueResult();
-        if (customerNumber==null) {
+        int customerNumber = (int) query.uniqueResult();
+        if (customerNumber==0) {
             System.out.println("The first customer number created");
 
             return 1000;
         } else {
             System.out.println("customer number created");
-            return Integer.parseInt((String) customerNumber) + 1;
+            return  customerNumber + 1;
         }
     }
 
 
     public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException {
         return RealCustomerCRUD.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
+
 
     }
 
