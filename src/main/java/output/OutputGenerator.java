@@ -144,7 +144,8 @@ public class OutputGenerator {
         stringBuilder.append("<body>");
         stringBuilder.append("            <div class=box-in>");
         stringBuilder.append("                <br>");
-        stringBuilder.append("                 <form action='UpdateRealCustomerServlet' method='get'>");
+        stringBuilder.append("                 <form action='RealCustomerServlet' method='get'>");
+        stringBuilder.append("                          <input type=\"hidden\" name=\"action\" value=\"update\">\n");
         stringBuilder.append("                <h1>اطلاعات مشتری حقوقی :</h1>");
         stringBuilder.append("                <br>");
         stringBuilder.append("<input type='hidden' name='id' value='" + realCustomer.getCustomerId() + "'>");
