@@ -2,6 +2,7 @@ package logic;
 
 import dataAccess.LoanTypeCRUD;
 import dataAccess.entity.LoanType;
+import exceptions.DataNotFoundException;
 import exceptions.RequiredFieldException;
 
 import java.util.ArrayList;
@@ -28,8 +29,8 @@ public class LoanTypeLogic {
         return new LoanType(loanName, interestRate);
     }
 
-    public static ArrayList<LoanType> retrieveLoanTypes() {
+    public static ArrayList<LoanType> retrieveLoanTypes() throws DataNotFoundException {
 
-        return LoanTypeCRUD.retrieveLoanTypes();
+        return (ArrayList<LoanType>) LoanTypeCRUD.retrieveLoanTypes();
     }
 }

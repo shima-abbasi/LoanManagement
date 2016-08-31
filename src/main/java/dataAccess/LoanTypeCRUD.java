@@ -2,6 +2,7 @@ package dataAccess;
 
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
+import exceptions.DataNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,7 +21,7 @@ public class LoanTypeCRUD {
         try {
             session.beginTransaction();
             session.save(loanType);
-            for(GrantCondition grantCondition : grantConditions){
+            for (GrantCondition grantCondition : grantConditions) {
                 grantCondition.setLoanType(loanType);
                 session.save(grantCondition);
             }
@@ -30,17 +31,17 @@ public class LoanTypeCRUD {
         }
     }
 
-    public static List<LoanType> retrieveLoanTypes() {
+    public static List<LoanType> retrieveLoanTypes() throws DataNotFoundException {
 
-
+        List loanTypes;
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
-            List loanTypes = session.createQuery("from LoanType").list();
+            loanTypes = session.createQuery("from LoanType").list();
         } catch (RuntimeException e) {
             e.printStackTrace();
             throw new DataNotFoundException("هیچ نوع تسهیلاتی ثبت نشده است!");
         }
-        return loanTypeEntities;
+        return loanTypes;
     }
 }
