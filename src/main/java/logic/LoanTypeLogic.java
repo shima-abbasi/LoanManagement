@@ -1,7 +1,10 @@
 package logic;
 
+import dataAccess.LoanTypeCRUD;
 import dataAccess.entity.LoanType;
 import exceptions.RequiredFieldException;
+
+import java.util.ArrayList;
 
 /**
  * Created by Dotin school 5 on 8/29/2016.
@@ -23,5 +26,11 @@ public class LoanTypeLogic {
             throw new RequiredFieldException("وارد کردن نرخ سود الزامی است.");
         }
         return new LoanType(loanName, interestRate);
+    }
+
+    public static ArrayList<LoanType> retrieveLoanTypes()
+            throws DataNotFoundException {
+
+        return LoanTypeCRUD.retrieveLoanTypes();
     }
 }
