@@ -27,38 +27,38 @@ public class LoanFileServlet extends HttpServlet {
         if ("retrieve-customer-and-loan-type".equalsIgnoreCase(action)){
             retrieveCustomerLoanType(request, response);
         }
-        if ("first-run".equalsIgnoreCase(action)){
-            firstRun(request, response);
-        }
-        if ("create".equalsIgnoreCase(action)){
-            createLoanFile(request, response);
-        }
+//        if ("first-run".equalsIgnoreCase(action)){
+//            firstRun(request, response);
+//        }
+//        if ("create".equalsIgnoreCase(action)){
+//            createLoanFile(request, response);
+//        }
     }
-
-    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
-
-        try {
-            Integer customerId = Integer.parseInt(request.getParameter("confirmedCustomerId"));
-            Integer loanTypeId = Integer.parseInt(request.getParameter("loanType"));
-            LoanFile loanFileObject = new LoanFile();
-            loanFileObject.setAmount(new BigDecimal(request.getParameter("amount")));
-            loanFileObject.setDuration(Integer.parseInt(request.getParameter("duration")));
-            LoanFileLogic.create(customerId,loanTypeId,loanFileObject);
-
-            request.setAttribute("header","عملیات موفق");
-            request.setAttribute("text","پرونده تسهیلاتی با موفقیت ثبت شد.");
-        } catch (Exception e) {
-            request.setAttribute("header","عملیات ناموفق");
-            request.setAttribute("text","خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
-        } finally {
-            try {
-                request.setAttribute("url","LoanFileController?action=first-run");
-                getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//
+//    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
+//
+//        try {
+//            Integer customerId = Integer.parseInt(request.getParameter("confirmedCustomerId"));
+//            Integer loanTypeId = Integer.parseInt(request.getParameter("loanType"));
+//            LoanFile loanFileObject = new LoanFile();
+//            loanFileObject.setAmount(new BigDecimal(request.getParameter("amount")));
+//            loanFileObject.setDuration(Integer.parseInt(request.getParameter("duration")));
+//            LoanFileLogic.create(customerId,loanTypeId,loanFileObject);
+//
+//            request.setAttribute("header","عملیات موفق");
+//            request.setAttribute("text","پرونده تسهیلاتی با موفقیت ثبت شد.");
+//        } catch (Exception e) {
+//            request.setAttribute("header","عملیات ناموفق");
+//            request.setAttribute("text","خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
+//        } finally {
+//            try {
+//                request.setAttribute("url","LoanFileController?action=first-run");
+//                getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
+//            } catch (ServletException | IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
 //    private void firstRun(HttpServletRequest request, HttpServletResponse response) {
 //        try {

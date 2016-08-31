@@ -28,8 +28,7 @@ public class LoanTypeLogic {
         return new LoanType(loanName, interestRate);
     }
 
-    public static ArrayList<LoanType> retrieveLoanTypes()
-            throws DataNotFoundException {
+    public static ArrayList<LoanType> retrieveLoanTypes() {
 
         return LoanTypeCRUD.retrieveLoanTypes();
     }

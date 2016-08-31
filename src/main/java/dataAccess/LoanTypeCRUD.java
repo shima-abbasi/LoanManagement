@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -27,5 +28,19 @@ public class LoanTypeCRUD {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<LoanType> retrieveLoanTypes() {
+
+
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            List loanTypes = session.createQuery("from LoanType").list();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            throw new DataNotFoundException("هیچ نوع تسهیلاتی ثبت نشده است!");
+        }
+        return loanTypeEntities;
     }
 }
