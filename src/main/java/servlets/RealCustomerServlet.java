@@ -35,6 +35,9 @@ public class RealCustomerServlet extends HttpServlet {
         if ("delete".equalsIgnoreCase(action)) {
             deleteRealCustomer(request, response);
         }
+        if ("retrieve".equalsIgnoreCase(action)) {
+            retrieveRealCustomer(request, response);
+        }
         if ("update".equalsIgnoreCase(action)) {
             updateRealCustomer(request, response);
         }
@@ -128,5 +131,23 @@ public class RealCustomerServlet extends HttpServlet {
         out.println(output);
 
     }
+
+    private void retrieveRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    int id = Integer.parseInt(request.getParameter("id"));
+    String output="";
+    try {
+        RealCustomer realCustomer = RealCustomerLogic.retrieveCustomer(id);
+        output = OutputGenerator.generateUpdatePage(realCustomer);
+
+    } catch (SQLException e) {
+        output = OutputGenerator.generateMessage("Problem in connection to the database", "search_legal_customer.html");
+    }
+
+    response.setContentType("text/html; charset=UTF-8");
+    PrintWriter out = response.getWriter();
+    out.println(output);
+
+}
 }
 

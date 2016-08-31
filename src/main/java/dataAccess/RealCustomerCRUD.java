@@ -1,9 +1,14 @@
 package dataAccess;
 
 import dataAccess.entity.RealCustomer;
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.persister.entity.Queryable;
 import util.HibernateUtil;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -20,21 +25,22 @@ public class RealCustomerCRUD {
         session.close();
         System.out.println("Successfully created " + customer.toString());
     }
+
     public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        String hql = generateHQL(customerNumber,firstName,lastName,fatherName,dateOfBirth,internationalID);
+        String hql = generateHQL(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
         List<RealCustomer> customers = session.createQuery(hql).list();
         session.close();
-        return  customers;
+        return customers;
     }
 
     public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        RealCustomer realCustomer = (RealCustomer) session.get(RealCustomer.class, id);
+        RealCustomer realCustomer = session.get(RealCustomer.class, id);
         realCustomer.setFirstName(firstName);
         realCustomer.setLastName(lastName);
         realCustomer.setFatherName(fatherName);
@@ -46,21 +52,20 @@ public class RealCustomerCRUD {
         System.out.println("Successfully updated " + realCustomer.toString());
     }
 
-public  static  void  deleteCustomer (int id)
-{
-    Session session = HibernateUtil.getSessionFactory().openSession();
-    session.beginTransaction();
-    RealCustomer realCustomer = session.get(RealCustomer.class, id);
-    session.delete(realCustomer);
-    System.out.println("Deleted Successfully");
-    session.getTransaction().commit();
-    session.close();
-}
+    public static void deleteCustomer(int id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        RealCustomer realCustomer = session.get(RealCustomer.class, id);
+        session.delete(realCustomer);
+        System.out.println("Deleted Successfully");
+        session.getTransaction().commit();
+        session.close();
+    }
 
     public static String generateHQL(String customerNumber, String firstName, String
             lastName, String fatherName, String dateOfBirth, String internationalID) {
         StringBuilder stringBuilder = new StringBuilder();
-        if (customerNumber!=""| firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
+        if (customerNumber != "" | firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
             stringBuilder.append("FROM RealCustomer rc where");
             int count = 0;
             if (customerNumber != "") {
@@ -103,5 +108,12 @@ public  static  void  deleteCustomer (int id)
         return stringBuilder.toString();
     }
 
-
+    public static RealCustomer retrieveCustomer(int id) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        String hql = "FROM RealCustomer rc where rc.customerId =:id";
+        Query query = session.createQuery(hql).setParameter("id", id);
+        RealCustomer realCustomer = (RealCustomer) query.uniqueResult();
+        return realCustomer;
+    }
 }

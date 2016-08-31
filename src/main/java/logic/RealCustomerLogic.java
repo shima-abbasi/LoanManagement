@@ -1,5 +1,6 @@
 package logic;
 import dataAccess.RealCustomerCRUD;
+import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
 import org.hibernate.Query;
@@ -31,9 +32,9 @@ public class RealCustomerLogic extends CustomerLogic {
             throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
         return true;
     }
-//    public static RealCustomer retrieveCustomer(int id) throws SQLException {
-//        return RealCustomerCRUD.retrieveCustomer(id);
-//    }
+    public static RealCustomer retrieveCustomer(int id) throws SQLException {
+        return RealCustomerCRUD.retrieveCustomer(id);
+    }
     public static void deleteCustomer(int id) throws SQLException {
         RealCustomerCRUD.deleteCustomer(id);
     }
