@@ -28,6 +28,7 @@
     <hr>
     <br>
     <% int customerExist = (int) request.getAttribute("customerExist");%>
+
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
             <form action="LoanFileServlet">

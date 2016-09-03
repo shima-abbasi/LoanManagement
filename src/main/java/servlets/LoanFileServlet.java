@@ -63,7 +63,7 @@ public class LoanFileServlet extends HttpServlet {
         }
     }
 
-    private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) {
+    private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int customerNumber = Integer.parseInt(request.getParameter("customerNumber"));
         int customerExist = 0;
@@ -82,11 +82,11 @@ public class LoanFileServlet extends HttpServlet {
                 request.setAttribute("anyLoanTypeExist", loanTypeExist);
                 request.setAttribute("loanTypes", loanTypes);
             }
-            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
+
     }
 
     private void firstRun(HttpServletRequest request, HttpServletResponse response) {
