@@ -1,6 +1,7 @@
 package logic;
 import dataAccess.RealCustomerCRUD;
 import dataAccess.entity.RealCustomer;
+import exceptions.DataNotFoundException;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
 import org.hibernate.Query;
@@ -17,7 +18,7 @@ public class RealCustomerLogic extends CustomerLogic {
 
     public static boolean validateUniqueCustomer(String internationalID) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("select realCustomer.internationalID from RealCustomer as realCustomer where realCustomer.internationalID=:int_id ");
+        Query query = session.createQuery("select rc.internationalID from RealCustomer as rc where rc.internationalID=:int_id ");
        query.setParameter("int_id", internationalID);
         List results = query.list();
         if (results.size()>0) {
@@ -35,7 +36,7 @@ public class RealCustomerLogic extends CustomerLogic {
     public static RealCustomer retrieveCustomer(int id) throws SQLException {
         return RealCustomerCRUD.retrieveCustomerById(id);
     }
-    public static  RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException {
+    public static  RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException, DataNotFoundException {
         return RealCustomerCRUD.retrieveCustomerByCustomerNumber(customerNumber);
     }
     public static void deleteCustomer(int id) throws SQLException {

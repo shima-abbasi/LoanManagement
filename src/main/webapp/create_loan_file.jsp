@@ -77,9 +77,6 @@
             <h2>خطا</h2>
             <p>شماره مشتری یافت نشد</p>
         </c:when>
-        <c:when test="<%=(customerExist==-1)%>">
-            <p> شماره مشتری را وارد نمایید</p>
-        </c:when>
     </c:choose>
     <br>
 </div>

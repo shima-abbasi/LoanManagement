@@ -1,4 +1,5 @@
 package logic;
+
 import dataAccess.RealCustomerCRUD;
 import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
@@ -33,19 +34,16 @@ public class CustomerLogic {
     }
 
 
-
     public static int generateCustomerNumber() throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "select max (rc.customerNumber) from RealCustomer rc";
+        String hql = "select max (rc.customerNumber) from RealCustomer as rc";
         Query query = session.createQuery(hql);
-        int customerNumber = (int) query.uniqueResult();
-        if (customerNumber==0) {
-            System.out.println("The first customer number created");
-
-            return 1000;
+        int customerNumber;
+        if (query.uniqueResult() != null) {
+            customerNumber = (int) query.uniqueResult();
+            return customerNumber + 1;
         } else {
-            System.out.println("customer number created");
-            return  customerNumber + 1;
+            return 1000;
         }
     }
 
@@ -58,9 +56,9 @@ public class CustomerLogic {
 
     public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException, RequiredFieldException, NoValidatedCustomerException {
         if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
-            throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
-        if(!RealCustomerLogic.validateUniqueCustomer(internationalID))
-            throw  new NoValidatedCustomerException();
+            throw new RequiredFieldException("لطفا فیلدهای ضروری را تکمیل کنید.");
+        if (!RealCustomerLogic.validateUniqueCustomer(internationalID))
+            throw new NoValidatedCustomerException();
         else
             RealCustomerCRUD.updateCustomer(id, firstName, lastName, fatherName, dateOfBirth, internationalID);
     }

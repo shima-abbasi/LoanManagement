@@ -52,8 +52,7 @@ public class RealCustomerServlet extends HttpServlet {
         String internationalID = request.getParameter("internationalID");
         String output = "";
 
-        try {
-            RealCustomer realCustomer = CustomerLogic.setCustomerInfo(firstName, lastName, fatherName, dateOfBirth, internationalID);
+        try {RealCustomer realCustomer = CustomerLogic.setCustomerInfo(firstName, lastName, fatherName, dateOfBirth, internationalID);
             output = OutputGenerator.generateRealCustomer(realCustomer);
         } catch (SQLException e) {
             e.printStackTrace();

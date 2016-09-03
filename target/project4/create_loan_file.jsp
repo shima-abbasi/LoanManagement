@@ -20,7 +20,7 @@
                 <td>شماره مشتری</td>
                 <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
                 <td><input class="button" type="submit" value="بازیابی مشتری"></td>
-                <td><a href="real_customer_management.jsp" class="form">بازگشت به صفحه قبل</a></td>
+                <td><a href="real_customer_management.jsp" class="button">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
     </form>
@@ -76,9 +76,6 @@
         <c:when test="<%=(customerExist==0)%>">
             <h2>خطا</h2>
             <p>شماره مشتری یافت نشد</p>
-        </c:when>
-        <c:when test="<%=(customerExist==-1)%>">
-            <p> شماره مشتری را وارد نمایید</p>
         </c:when>
     </c:choose>
     <br>

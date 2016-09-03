@@ -1,6 +1,7 @@
 package dataAccess;
 
 import dataAccess.entity.RealCustomer;
+import exceptions.DataNotFoundException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.persister.entity.Queryable;
@@ -10,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.zip.DataFormatException;
 
 /**
  * Created by Dotin school 5 on 8/21/2016.
@@ -109,20 +111,25 @@ public class RealCustomerCRUD {
     }
 
     public static RealCustomer retrieveCustomerById(int id) throws SQLException {
+        RealCustomer realCustomer;
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        String hql = "FROM RealCustomer rc where rc.customerId =:id";
-        Query query = session.createQuery(hql).setParameter("id", id);
-        RealCustomer realCustomer = (RealCustomer) query.uniqueResult();
+        realCustomer = session.get(RealCustomer.class, id);
         return realCustomer;
     }
 
-    public static RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException {
+    public static RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException, DataNotFoundException {
+        RealCustomer realCustomer;
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        String hql = "FROM RealCustomer rc where rc.customerNumber =:customerNumber";
-        Query query = session.createQuery(hql).setParameter("customerNumber", customerNumber);
-        RealCustomer realCustomer = (RealCustomer) query.uniqueResult();
+        try {
+            session.beginTransaction();
+            realCustomer = session.get(RealCustomer.class, customerNumber);
+            if(realCustomer==null){
+                throw new DataNotFoundException("مشتری مورد نظر یافت نشد");
+            }
+        } finally {
+            session.close();
+        }
         return realCustomer;
     }
 }
