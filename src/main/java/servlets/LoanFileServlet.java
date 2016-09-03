@@ -70,22 +70,25 @@ public class LoanFileServlet extends HttpServlet {
 //        }
 //    }
 
+
+
     private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) {
 
-        int customerNumber = Integer.parseInt(request.getParameter("customerId"));
+        int customerNumber = Integer.parseInt(request.getParameter("customerNumber"));
         int customerExist = 0;
         boolean loanTypeExist = false;
         try {
             RealCustomer realCustomer = RealCustomerLogic.retrieveCustomerByCustomerNumber(customerNumber);
             customerExist = 1;
-            request.setAttribute("realCustomer", realCustomer);
+            request.setAttribute("customerExist", customerExist);
             request.setAttribute("customerNumber", customerNumber);
+            request.setAttribute("realCustomer", realCustomer);
 
             ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
             loanTypeExist = true;
-            request.setAttribute("loanTypes", loanTypes);
-            request.setAttribute("customerExist", customerExist);
             request.setAttribute("loanTypeExist", loanTypeExist);
+            request.setAttribute("loanTypes", loanTypes);
+
             getServletConfig().getServletContext().getRequestDispatcher("/create-loan-file.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println(e.getMessage());

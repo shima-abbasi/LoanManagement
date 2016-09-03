@@ -15,11 +15,11 @@
     <br>
     <form action="LoanFileServlet">
         <input type="text" name="action" value="retrieve-customer-and-loan-type" hidden>
-        <table>
+        <table align="center">
             <tr>
                 <td>شماره مشتری</td>
-                <td><input type="text" name="customerId" value="<%=request.getAttribute("customerId")%>"></td>
-                <td><input class="button" type="submit" value="بازیابی"></td>
+                <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
+                <td><input class="button" type="submit" value="بازیابی مشتری"></td>
                 <td><a href="real_customer_management.jsp" class="form">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
@@ -31,9 +31,9 @@
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
             <form action="LoanFileServlet">
-                <input type="text" hidden name="action" value="create">
+                <input type="text"  name="action" value="create" hidden>
                 <% RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer"); %>
-                <input type="text" hidden name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()f%>">
+                <input type="text"  name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
 
                 <table>
                     <tr>
