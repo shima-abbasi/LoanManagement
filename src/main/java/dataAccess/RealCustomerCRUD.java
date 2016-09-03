@@ -123,10 +123,15 @@ public class RealCustomerCRUD {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             session.beginTransaction();
-            realCustomer = session.get(RealCustomer.class, customerNumber);
-            if(realCustomer==null){
+            Query query = session.createQuery("from RealCustomer rc where rc.customerNumber=:cn");
+            query.setParameter("cn", customerNumber);
+            realCustomer = (RealCustomer) query.uniqueResult();
+            if (query.uniqueResult() == null) {
                 throw new DataNotFoundException("مشتری مورد نظر یافت نشد");
+            } else {
+                realCustomer = (RealCustomer) query.uniqueResult();
             }
+
         } finally {
             session.close();
         }

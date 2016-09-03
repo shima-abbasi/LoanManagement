@@ -46,8 +46,6 @@ public class CustomerLogic {
             return 1000;
         }
     }
-
-
     public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException {
         return RealCustomerCRUD.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
 
