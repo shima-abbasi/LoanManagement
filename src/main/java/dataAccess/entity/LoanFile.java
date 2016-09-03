@@ -30,11 +30,11 @@ public class LoanFile implements Serializable {
     @Column(name = "AMOUNT", nullable = false)
     private BigDecimal amount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "LOAN_TYPE_ID", nullable = false)
     private LoanType loanType;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "CUSTOMER_ID", nullable = false)
     private RealCustomer realCustomer;
 

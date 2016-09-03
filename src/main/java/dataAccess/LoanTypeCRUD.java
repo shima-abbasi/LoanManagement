@@ -3,9 +3,11 @@ package dataAccess;
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
 import exceptions.DataNotFoundException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.omg.SendingContext.RunTime;
 import util.HibernateUtil;
 
 import java.util.ArrayList;
@@ -43,5 +45,18 @@ public class LoanTypeCRUD {
             throw new DataNotFoundException("هیچ نوع تسهیلاتی ثبت نشده است!");
         }
         return loanTypes;
+    }
+
+    public static LoanType retrieveLoanTypeById (int loanTypeId) throws DataNotFoundException {
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            LoanType loanType = session.get(LoanType.class, loanTypeId);
+            session.getTransaction().commit();
+            return loanType;
+        }
+        catch (Exception e) {
+            throw new DataNotFoundException("تسهیلات یافت نشد.");
+        }
     }
 }

@@ -1,12 +1,15 @@
 package logic;
 
+import dataAccess.GrantConditionCRUD;
 import dataAccess.LoanTypeCRUD;
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
+import exceptions.DataNotFoundException;
 import exceptions.OutOfRangeException;
 
 import javax.transaction.NotSupportedException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -29,5 +32,10 @@ public class GrantConditionLogic {
                 throw new OutOfRangeException("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
             }
         }
+    }
+    public static List<GrantCondition> retrieveConditionsByLoanId(int loanTypeId) throws DataNotFoundException {
+
+        return GrantConditionCRUD.retrieveLoanTypeConditions(loanTypeId);
+
     }
 }

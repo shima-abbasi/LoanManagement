@@ -23,10 +23,10 @@ public class LoanType implements Serializable {
     @Column(name = "INTEREST_RATE", nullable = false)
     private float interestRate;
 
-    @OneToMany(mappedBy = "loanType")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "loanType")
     private Set<GrantCondition> grantConditions = new HashSet<GrantCondition>(0);
 
-    @OneToMany(mappedBy = "loanType")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "loanType")
     private Set<LoanFile> loanFiles = new HashSet<LoanFile>(0);
 
     //----------constructors------------------

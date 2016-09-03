@@ -52,7 +52,7 @@ public class LoanFileServlet extends HttpServlet {
             request.setAttribute("text","خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
         } finally {
             try {
-                request.setAttribute("url","LoanFileController?action=first-run");
+                request.setAttribute("url","LoanFileServlet?action=first-run");
                 getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();

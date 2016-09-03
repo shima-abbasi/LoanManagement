@@ -5,24 +5,26 @@ import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanFile;
 import dataAccess.entity.LoanType;
 import dataAccess.entity.RealCustomer;
+import exceptions.DataNotFoundException;
+import exceptions.OutOfRangeException;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dotin school 5 on 8/31/2016.
  */
 public class LoanFileLogic {
-    public static void validateLoanFile(LoanFile loanFileObject, Integer loanId)
-            throws DataNotFoundException, InputNotInRangeException {
+    public static void validateLoanFile(LoanFile loanFile, int loanTypeId) throws OutOfRangeException, DataNotFoundException {
 
-        ArrayList<GrantCondition> grantConditionObjects = GrantConditionLogic.retrieveConditionsByLoanId(loanId);
-        for(GrantCondition grantConditionObject : grantConditionObjects){
-            if( loanFileObject.getDuration() > grantConditionObject.getMaxDuration() || loanFileObject.getDuration() < grantConditionObject.getMinDuration()){
-                throw new InputNotInRangeException("مدت زمان وارد شده در محدوده مدت زمان های شرایط تسهیلات صدق نمی کند! لطفا دوباره تلاش کنید.");
+        List<GrantCondition> grantConditions = GrantConditionLogic.retrieveConditionsByLoanId(loanTypeId);
+        for(GrantCondition grantConditionObject : grantConditions){
+            if( loanFile.getDuration() > grantConditionObject.getMaxDuration() || loanFile.getDuration() < grantConditionObject.getMinDuration()){
+                throw new OutOfRangeException("مدت زمان وارد شده در محدوده مدت زمان های شرایط تسهیلات صدق نمی کند! لطفا دوباره تلاش کنید.");
             }
-            if( loanFileObject.getAmount().compareTo(new BigDecimal(grantConditionObject.getMaxDuration()))==1  || loanFileObject.getAmount().compareTo(new BigDecimal(grantConditionObject.getMinDuration()))==-1 ){
-                throw new InputNotInRangeException("مبلغ وارد شده در محدوده مبلغ های شرایط تسهیلات صدق نمی کند! لطفا دوباره تلاش کنید.");
+            if( loanFile.getAmount().compareTo(new BigDecimal(grantConditionObject.getMaxDuration()))==1  || loanFile.getAmount().compareTo(new BigDecimal(grantConditionObject.getMinDuration()))==-1 ){
+                throw new OutOfRangeException("مبلغ وارد شده در محدوده مبلغ های شرایط تسهیلات صدق نمی کند! لطفا دوباره تلاش کنید.");
             }
         }
     }
@@ -39,13 +41,12 @@ public class LoanFileLogic {
 //        return LoanTypeLogic.retrieveAll();
 //    }
 //
-//    public static LoanTypeObject retrieveLoanType(Integer loanTypeId)
-//            throws DataNotFoundException {
-//
-//        return LoanTypeLogic.retrieve(loanTypeId);
-//    }
+    public static LoanType retrieveLoanType(int loanTypeId) {
 
-    public static void create(int customerNumber, int loanTypeId, LoanFile loanFile) throws InputNotInRangeException {
+        return LoanTypeLogic.retrieveLoanTypeById(loanTypeId);
+    }
+
+    public static void create(int customerNumber, int loanTypeId, LoanFile loanFile) {
 
         try {
             LoanType loanType = retrieveLoanType(loanTypeId);
