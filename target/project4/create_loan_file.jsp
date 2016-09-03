@@ -28,6 +28,8 @@
     <hr>
     <br>
     <% int customerExist = (int) request.getAttribute("customerExist");%>
+    <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
+
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
             <form action="LoanFileServlet">
@@ -44,7 +46,6 @@
                     <tr>
                         <td> نوع تسهیلات :</td>
                         <td>
-                            <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
                             <c:choose>
                                 <c:when test="<%=loanTypeExist%>">
                                     <% ArrayList<LoanType> loanTypes = (ArrayList<LoanType>) request.getAttribute("loanTypes"); %>

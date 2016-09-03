@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/LoanFileServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoanFileServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_loan_type.jsp" afterPath="$PROJECT_DIR$/target/project4/create_loan_type.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_loan_file.jsp" afterPath="$PROJECT_DIR$/target/project4/create_loan_file.jsp" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +35,8 @@
       <file leaf-file-name="create_loan_file.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="391">
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -1006,7 +1002,7 @@
       <workItem from="1472449896726" duration="22827000" />
       <workItem from="1472541814455" duration="20447000" />
       <workItem from="1472623862841" duration="15866000" />
-      <workItem from="1472878346443" duration="27027000" />
+      <workItem from="1472878346443" duration="27177000" />
     </task>
     <task id="LOCAL-00001" summary="commit:D">
       <created>1471764793293</created>
@@ -1302,11 +1298,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472908506932</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="yeyyyyyyyy\m/">
+      <created>1472910688226</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1472910688226</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152125000" />
+    <option name="totallyTimeSpent" value="152275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1838,8 +1841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state relative-caret-position="391">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding />
         </state>
       </provider>
