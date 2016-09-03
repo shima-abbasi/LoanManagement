@@ -82,14 +82,10 @@ public class LoanFileServlet extends HttpServlet {
                 request.setAttribute("anyLoanTypeExist", loanTypeExist);
                 request.setAttribute("loanTypes", loanTypes);
             }
+            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }
-        try {
-            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
         }
     }
 

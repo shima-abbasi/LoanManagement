@@ -56,7 +56,7 @@
     <br>
     <hr>
     <br>
-    <form action="CreateGrantConditionServlet" method="get">
+    <form action="GrantConditionServlet" method="get">
         <input type="hidden" name="loanName" value="<%= request.getParameter("loanName")%>">
         <input type="hidden" name="interestRate" value="<%= request.getParameter("interestRate")%>">
         <table class="result-table" id="GrantConditionShowTable"></table>
