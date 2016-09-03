@@ -19,8 +19,7 @@ import java.util.ArrayList;
  * Created by Dotin school 5 on 8/31/2016.
  */
 public class LoanFileServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
         request.setCharacterEncoding("UTF-8");
@@ -30,35 +29,36 @@ public class LoanFileServlet extends HttpServlet {
 //        if ("first-run".equalsIgnoreCase(action)){
 //            firstRun(request, response);
 //        }
-//        if ("create".equalsIgnoreCase(action)){
-//            createLoanFile(request, response);
-//        }
+        if ("create".equalsIgnoreCase(action)){
+            createLoanFile(request, response);
+        }
     }
-//
-//    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
-//
-//        try {
-//            Integer customerId = Integer.parseInt(request.getParameter("confirmedCustomerId"));
-//            Integer loanTypeId = Integer.parseInt(request.getParameter("loanType"));
-//            LoanFile loanFileObject = new LoanFile();
-//            loanFileObject.setAmount(new BigDecimal(request.getParameter("amount")));
-//            loanFileObject.setDuration(Integer.parseInt(request.getParameter("duration")));
-//            LoanFileLogic.create(customerId,loanTypeId,loanFileObject);
-//
-//            request.setAttribute("header","عملیات موفق");
-//            request.setAttribute("text","پرونده تسهیلاتی با موفقیت ثبت شد.");
-//        } catch (Exception e) {
-//            request.setAttribute("header","عملیات ناموفق");
-//            request.setAttribute("text","خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
-//        } finally {
-//            try {
-//                request.setAttribute("url","LoanFileController?action=first-run");
-//                getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
-//            } catch (ServletException | IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+
+    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
+
+        try {
+            LoanFile loanFile = new LoanFile();
+            int customerNumber = Integer.parseInt(request.getParameter("confirmedCustomerNumber"));
+            int loanTypeId = Integer.parseInt(request.getParameter("loanType"));
+            loanFile.setAmount(new BigDecimal(request.getParameter("amount")));
+            loanFile.setDuration(Integer.parseInt(request.getParameter("duration")));
+            LoanFileLogic.create(customerNumber,loanTypeId,loanFile);
+
+            request.setAttribute("header","عملیات موفق");
+            request.setAttribute("text","پرونده تسهیلاتی با موفقیت ثبت شد.");
+        } catch (Exception e) {
+            request.setAttribute("header","عملیات ناموفق");
+
+            request.setAttribute("text","خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
+        } finally {
+            try {
+                request.setAttribute("url","LoanFileController?action=first-run");
+                getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
+            } catch (ServletException | IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 //    private void firstRun(HttpServletRequest request, HttpServletResponse response) {
 //        try {
@@ -72,21 +72,20 @@ public class LoanFileServlet extends HttpServlet {
 
     private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) {
 
-
-        Integer customerId = Integer.parseInt(request.getParameter("customerId"));
-        int customerExists = 0;
-        boolean loanTypeExists = false;
+        int customerNumber = Integer.parseInt(request.getParameter("customerId"));
+        int customerExist = 0;
+        boolean loanTypeExist = false;
         try {
-            RealCustomer realCustomer = RealCustomerLogic.retrieveCustomer(customerId);
-            customerExists = 1;
+            RealCustomer realCustomer = RealCustomerLogic.retrieveCustomerByCustomerNumber(customerNumber);
+            customerExist = 1;
             request.setAttribute("realCustomer", realCustomer);
-            request.setAttribute("customerId", customerId);
+            request.setAttribute("customerNumber", customerNumber);
 
             ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
-            loanTypeExists = true;
+            loanTypeExist = true;
             request.setAttribute("loanTypes", loanTypes);
-            request.setAttribute("customerExists", customerExists);
-            request.setAttribute("anyLoanTypeExists", loanTypeExists);
+            request.setAttribute("customerExist", customerExist);
+            request.setAttribute("loanTypeExist", loanTypeExist);
             getServletConfig().getServletContext().getRequestDispatcher("/create-loan-file.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println(e.getMessage());

@@ -33,7 +33,10 @@ public class RealCustomerLogic extends CustomerLogic {
         return true;
     }
     public static RealCustomer retrieveCustomer(int id) throws SQLException {
-        return RealCustomerCRUD.retrieveCustomer(id);
+        return RealCustomerCRUD.retrieveCustomerById(id);
+    }
+    public static  RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException {
+        return RealCustomerCRUD.retrieveCustomerByCustomerNumber(customerNumber);
     }
     public static void deleteCustomer(int id) throws SQLException {
         RealCustomerCRUD.deleteCustomer(id);

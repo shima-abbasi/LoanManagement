@@ -11,6 +11,14 @@ import java.math.BigDecimal;
 @Table(name = "LOAN_FILE")
 public class LoanFile implements Serializable {
 
+    public RealCustomer getRealCustomer() {
+        return realCustomer;
+    }
+
+    public void setRealCustomer(RealCustomer realCustomer) {
+        this.realCustomer = realCustomer;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "LOAN_FILE_ID", nullable = false)

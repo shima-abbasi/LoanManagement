@@ -108,11 +108,20 @@ public class RealCustomerCRUD {
         return stringBuilder.toString();
     }
 
-    public static RealCustomer retrieveCustomer(int id) throws SQLException {
+    public static RealCustomer retrieveCustomerById(int id) throws SQLException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         String hql = "FROM RealCustomer rc where rc.customerId =:id";
         Query query = session.createQuery(hql).setParameter("id", id);
+        RealCustomer realCustomer = (RealCustomer) query.uniqueResult();
+        return realCustomer;
+    }
+
+    public static RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        String hql = "FROM RealCustomer rc where rc.customerNumber =:customerNumber";
+        Query query = session.createQuery(hql).setParameter("customerNumber", customerNumber);
         RealCustomer realCustomer = (RealCustomer) query.uniqueResult();
         return realCustomer;
     }
