@@ -29,6 +29,9 @@ public class LoanFileServlet extends HttpServlet {
         if ("create".equalsIgnoreCase(action)){
             createLoanFile(request, response);
         }
+        if ("first-run".equalsIgnoreCase(action)){
+            firstRun(request, response);
+        }
     }
 
     private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
@@ -50,7 +53,7 @@ public class LoanFileServlet extends HttpServlet {
         } finally {
             try {
                 request.setAttribute("url","LoanFileServlet?action=first-run");
-                getServletConfig().getServletContext().getRequestDispatcher("/info-page.jsp").forward(request,response);
+                getServletConfig().getServletContext().getRequestDispatcher("/info.jsp").forward(request,response);
             } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
@@ -65,19 +68,32 @@ public class LoanFileServlet extends HttpServlet {
         try {
             RealCustomer realCustomer = RealCustomerLogic.retrieveCustomerByCustomerNumber(customerNumber);
             customerExist = 1;
-            request.setAttribute("customerExist", customerExist);
             request.setAttribute("customerNumber", customerNumber);
             request.setAttribute("realCustomer", realCustomer);
 
             ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
             loanTypeExist = true;
-            request.setAttribute("loanTypeExist", loanTypeExist);
             request.setAttribute("loanTypes", loanTypes);
 
-            getServletConfig().getServletContext().getRequestDispatcher("/create-loan-file.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        try {
+            request.setAttribute("customerExist",customerExist);
+            request.setAttribute("anyLoanTypeExist",loanTypeExist);
+            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
     }
-//    }
+
+    private void firstRun(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.setAttribute("customerExist",-1);
+            request.setAttribute("customerNumber","");
+            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

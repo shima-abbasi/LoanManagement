@@ -15,11 +15,11 @@
     <br>
     <form action="LoanFileServlet">
         <input type="text" name="action" value="retrieve-customer-and-loan-type" hidden>
-        <table>
+        <table align="center">
             <tr>
                 <td>شماره مشتری</td>
-                <td><input type="text" name="customerId" value="<%=request.getAttribute("customerId")%>"></td>
-                <td><input class="button" type="submit" value="بازیابی"></td>
+                <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
+                <td><input class="button" type="submit" value="بازیابی مشتری"></td>
                 <td><a href="real_customer_management.jsp" class="form">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
@@ -27,30 +27,30 @@
     <br>
     <hr>
     <br>
-    <% int customerExists = (int) request.getAttribute("customerExists");%>
+    <% int customerExist = (int) request.getAttribute("customerExist");%>
     <c:choose>
-        <c:when test="<%=(customerExists==1)%>">
-            <form action="LoanFileController">
-                <input type="text" hidden name="action" value="create">
-                <% RealCustomer realCustomerObject = (RealCustomer) request.getAttribute("realCustomerObject"); %>
-                <input type="text" hidden name="confirmedCustomerId" value="<%=realCustomerObject.getCustomerId()%>">
+        <c:when test="<%=(customerExist==1)%>">
+            <form action="LoanFileServlet">
+                <input type="text" name="action" value="create" hidden>
+                <% RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer"); %>
+                <input type="text" name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
 
                 <table>
                     <tr>
                         <td> نام و نام خانوادگی مشتری :</td>
-                        <td><%=realCustomerObject.getFirstName()%>
+                        <td><%=realCustomer.getFirstName()%><%=realCustomer.getLastName()%>
                         </td>
                     </tr>
                     <tr>
-                        <td> نوع تسهیلات*</td>
+                        <td> نوع تسهیلات :</td>
                         <td>
-                            <%boolean anyLoanTypeExists = (boolean) request.getAttribute("anyLoanTypeExists"); %>
+                            <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
                             <c:choose>
-                                <c:when test="<%=anyLoanTypeExists%>">
-                                    <% ArrayList<LoanType> loanTypeObjects = (ArrayList<LoanType>) request.getAttribute("loanTypeObjects"); %>
+                                <c:when test="<%=loanTypeExist%>">
+                                    <% ArrayList<LoanType> loanTypes = (ArrayList<LoanType>) request.getAttribute("loanTypes"); %>
                                     <select class="my-dropdown" name="loanType">
-                                        <% for (LoanType loanTypeObject : loanTypeObjects) { %>
-                                        <option value="<%= loanTypeObject.getLoanTypeId()%>"><%= loanTypeObject.getLoanName()%>
+                                        <% for (LoanType loanType : loanTypes) { %>
+                                        <option value="<%= loanType.getLoanTypeId()%>"><%= loanType.getLoanName()%>
                                         </option>
                                         <%}%>
                                     </select>
@@ -62,23 +62,24 @@
                         </td>
                     </tr>
                     <tr>
-                        <td> مدت قرارداد*</td>
+                        <td> مدت قرارداد :</td>
                         <td><input type="text" name="duration"></td>
                     </tr>
                     <tr>
-                        <td>مبلغ قرارداد*</td>
+                        <td>مبلغ قرارداد :</td>
                         <td><input type="text" name="amount"></td>
                     </tr>
                 </table>
                 <input class="button" type="submit" value="ثبت">
             </form>
         </c:when>
-        <c:when test="<%=(customerExists==0)%>">
+        <c:when test="<%=(customerExist==0)%>">
             <h2>خطا</h2>
             <p>شماره مشتری یافت نشد</p>
         </c:when>
-        <c:otherwise>
-        </c:otherwise>
+        <c:when test="<%=(customerExist==-1)%>">
+            <p> شماره مشتری را وارد نمایید</p>
+        </c:when>
     </c:choose>
     <br>
 </div>

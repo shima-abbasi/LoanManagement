@@ -20,7 +20,7 @@
                 <td>شماره مشتری</td>
                 <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
                 <td><input class="button" type="submit" value="بازیابی مشتری"></td>
-                <td><a href="real_customer_management.jsp" class="form">بازگشت به صفحه قبل</a></td>
+                <td><a href="real_customer_management.jsp" class="button">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
     </form>
@@ -31,9 +31,9 @@
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
             <form action="LoanFileServlet">
-                <input type="text"  name="action" value="create" hidden>
+                <input type="text" name="action" value="create" hidden>
                 <% RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer"); %>
-                <input type="text"  name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
+                <input type="text" name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
 
                 <table>
                     <tr>
@@ -73,10 +73,13 @@
                 <input class="button" type="submit" value="ثبت">
             </form>
         </c:when>
-        <c:otherwise>
+        <c:when test="<%=(customerExist==0)%>">
             <h2>خطا</h2>
             <p>شماره مشتری یافت نشد</p>
-        </c:otherwise>
+        </c:when>
+        <c:when test="<%=(customerExist==-1)%>">
+            <p> شماره مشتری را وارد نمایید</p>
+        </c:when>
     </c:choose>
     <br>
 </div>

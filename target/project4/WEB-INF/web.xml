@@ -16,6 +16,10 @@
     <servlet-name>GrantConditionServlet</servlet-name>
     <servlet-class>servlets.GrantConditionServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>LoanFileServlet</servlet-name>
+    <servlet-class>servlets.LoanFileServlet</servlet-class>
+  </servlet>
 
 
 
@@ -30,6 +34,10 @@
   <servlet-mapping>
     <servlet-name>GrantConditionServlet</servlet-name>
     <url-pattern>/GrantConditionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoanFileServlet</servlet-name>
+    <url-pattern>/LoanFileServlet</url-pattern>
   </servlet-mapping>
 
 

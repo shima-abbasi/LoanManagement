@@ -12,9 +12,7 @@
         <form action="create_loan_type.jsp">
             <button class="button" type="submit">تعریف تسهیلات جدید</button>
         </form>
-        <form action="create_loan_file.jsp">
-            <button class="button" type="submit"> تشکیل پرونده تسهیلات</button>
-        </form>
+        <a href="LoanFileServlet?action=first-run" class="button">تشکیل پرونده تسهیلاتی</a>
         <form action="select-task.jsp">
             <button class="button" type="submit"> بازگشت به صفحه قبل</button>
         </form>
