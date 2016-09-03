@@ -26,9 +26,6 @@ public class LoanFileServlet extends HttpServlet {
         if ("retrieve-customer-and-loan-type".equalsIgnoreCase(action)){
             retrieveCustomerLoanType(request, response);
         }
-//        if ("first-run".equalsIgnoreCase(action)){
-//            firstRun(request, response);
-//        }
         if ("create".equalsIgnoreCase(action)){
             createLoanFile(request, response);
         }
@@ -59,18 +56,6 @@ public class LoanFileServlet extends HttpServlet {
             }
         }
     }
-
-//    private void firstRun(HttpServletRequest request, HttpServletResponse response) {
-//        try {
-//            request.setAttribute("customerExists",-1);
-//            request.setAttribute("customerId","");
-//            getServletConfig().getServletContext().getRequestDispatcher("/create-loan-file.jsp").forward(request,response);
-//        } catch (ServletException | IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-
 
     private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) {
 

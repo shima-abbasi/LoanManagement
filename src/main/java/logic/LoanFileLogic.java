@@ -55,7 +55,7 @@ public class LoanFileLogic {
             loanFile.setLoanType(loanType);
             RealCustomer realCustomer = retrieveCustomer(customerNumber);
             loanFile.setRealCustomer(realCustomer);
-            LoanFileCRUD.saveLoanFile(loanFile , loanType, realCustomer);
+            LoanFileCRUD.saveLoanFile(loanFile);
         } catch (DataNotFoundException e) {
             e.printStackTrace();
         } catch (OutOfRangeException e) {
