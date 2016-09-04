@@ -1,12 +1,11 @@
 package servlets;
 
 import dataAccess.entity.RealCustomer;
+import exceptions.IncorrectFormatException;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
-import logic.CustomerLogic;
 import logic.RealCustomerLogic;
 import output.OutputGenerator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,20 +41,20 @@ public class RealCustomerServlet extends HttpServlet {
     }
 
     private void createRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String fatherName = request.getParameter("fatherName");
-        String dateOfBirth = request.getParameter("dateOfBirth");
-        String internationalID = request.getParameter("internationalID");
+        RealCustomer realCustomer = new RealCustomer();
+        realCustomer.setFirstName( request.getParameter("firstName"));
+        realCustomer.setLastName(request.getParameter("lastName"));
+        realCustomer.setFatherName( request.getParameter("fatherName"));
+        realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
+        realCustomer.setInternationalID( request.getParameter("internationalID"));
         String output = "";
 
         try {
-            RealCustomer realCustomer = CustomerLogic.setCustomerInfo(firstName, lastName, fatherName, dateOfBirth, internationalID);
-            output = OutputGenerator.generateRealCustomer(realCustomer);
+            RealCustomer realCustomerObject = RealCustomerLogic.setCustomerInfo(realCustomer);
+            output = OutputGenerator.generateRealCustomer(realCustomerObject);
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (NoValidatedCustomerException | RequiredFieldException e) {
+        } catch (NoValidatedCustomerException | RequiredFieldException | IncorrectFormatException e) {
             output = OutputGenerator.generateMessage(e.getMessage(), "create_real_customer.jsp");
         }
         response.setContentType("text/html; charset=UTF-8");
@@ -73,7 +72,7 @@ public class RealCustomerServlet extends HttpServlet {
         String internationalID = request.getParameter("internationalID");
         String output = "";
         try {
-            List<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
+            List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
             if (realCustomerResult.size() == 0) {
                 output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
             } else {
@@ -114,7 +113,7 @@ public class RealCustomerServlet extends HttpServlet {
         String internationalID = request.getParameter("internationalID");
         String output = "";
         try {
-            CustomerLogic.updateCustomer(id, firstName, lastName, fatherName, dateOfBirth, internationalID);
+            RealCustomerLogic.updateCustomer(id, firstName, lastName, fatherName, dateOfBirth, internationalID);
             output = OutputGenerator.generateMessage("اطلاعات مشتری با موفقیت اصلاح شد.", "search_real_customer.jsp");
         } catch (SQLException e) {
             e.printStackTrace();

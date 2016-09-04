@@ -2,33 +2,41 @@ package dataAccess;
 
 import dataAccess.entity.RealCustomer;
 import exceptions.DataNotFoundException;
+import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.persister.entity.Queryable;
+import org.hibernate.Transaction;
 import util.HibernateUtil;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.zip.DataFormatException;
 
 /**
  * Created by Dotin school 5 on 8/21/2016.
  */
 public class RealCustomerCRUD {
+    static Logger logger = Logger.getLogger(RealCustomerCRUD.class);
 
     public static void createRealCustomer(RealCustomer customer) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(customer);
-        session.getTransaction().commit();
-        session.close();
-        System.out.println("Successfully created " + customer.toString());
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.save(customer);
+            transaction.commit();
+            logger.info("Successfully created customer: " + customer.toString());
+        } catch (HibernateException e) {
+            logger.warn(e.getMessage());
+            transaction.rollback();
+        } finally {
+            session.close();
+            logger.info("session closed!");
+        }
     }
 
-    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
+    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String
+            lastName, String fatherName, String dateOfBirth, String internationalID) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

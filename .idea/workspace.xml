@@ -7,19 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/exceptions/NoValidatedCustomerException.class" afterPath="$PROJECT_DIR$/target/classes/exceptions/NoValidatedCustomerException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/exceptions/RequiredFieldException.class" afterPath="$PROJECT_DIR$/target/classes/exceptions/RequiredFieldException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/exceptions/NoValidatedCustomerException.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/exceptions/NoValidatedCustomerException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/exceptions/RequiredFieldException.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/exceptions/RequiredFieldException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/CustomerLogic.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/CustomerLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/RealCustomerLogic.class" afterPath="$PROJECT_DIR$/target/project4/WEB-INF/classes/logic/RealCustomerLogic.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exceptions/IncorrectFormatException.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" afterPath="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" afterPath="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" afterPath="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_real_customer.jsp" afterPath="$PROJECT_DIR$/target/project4/create_real_customer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/css/style.css" afterPath="$PROJECT_DIR$/target/project4/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/search_real_customer.jsp" afterPath="$PROJECT_DIR$/target/project4/search_real_customer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/select-task.jsp" afterPath="$PROJECT_DIR$/target/project4/select-task.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,18 +39,20 @@
       <file leaf-file-name="RealCustomerServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
-              <folding />
+            <state relative-caret-position="295">
+              <caret line="52" column="70" selection-start-line="52" selection-start-column="70" selection-end-line="52" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerLogic.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java">
+      <file leaf-file-name="RealCustomerCRUD.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+            <state relative-caret-position="170">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -110,16 +105,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="real_customer_management.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/real_customer_management.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="loan_management.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/loan_management.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,22 +125,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_grant_condition.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
+      <file leaf-file-name="RealCustomerLogic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="123" />
+            <state relative-caret-position="210">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RealCustomerLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java">
+      <file leaf-file-name="IncorrectFormatException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/IncorrectFormatException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="102">
+              <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+              <folding>
+                <element signature="e#212#213#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -189,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/servlets/DeleteRealCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_real_customer.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/real_customer_management.html" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/entity/Customer.java" />
@@ -218,7 +204,6 @@
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/GrantConditionCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/LoanFileCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/entity/LoanFile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/loan_management.jsp" />
@@ -236,10 +221,12 @@
         <option value="$PROJECT_DIR$/src/main/webapp/select-task.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/exceptions/IncorrectFormatException.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
       </list>
     </option>
   </component>
@@ -531,6 +518,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -628,7 +619,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/JSPwebapp" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -1122,7 +1113,7 @@
       <workItem from="1472623862841" duration="15866000" />
       <workItem from="1472878346443" duration="27198000" />
       <workItem from="1472973194281" duration="17416000" />
-      <workItem from="1472993749990" duration="1333000" />
+      <workItem from="1472993749990" duration="3386000" />
     </task>
     <task id="LOCAL-00001" summary="commit:D">
       <created>1471764793293</created>
@@ -1453,11 +1444,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472993272960</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="yeyyyyyyyy\m/">
+      <created>1472995090985</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1472995090985</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171045000" />
+    <option name="totallyTimeSpent" value="173098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1554,13 +1552,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java</url>
-          <line>121</line>
+          <line>129</line>
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java</url>
-          <line>52</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
@@ -1606,7 +1604,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/table_script.js" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1631,6 +1628,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,6 +1740,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1756,6 +1755,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1824,14 +1824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1887">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1880,6 +1872,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#176#177#0" expanded="false" />
+            <element signature="e#206#207#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1939,14 +1935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="53" column="63" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1972,18 +1960,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state relative-caret-position="170">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/exceptions/IncorrectFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+          <folding>
+            <element signature="e#212#213#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="52" column="70" selection-start-line="52" selection-start-column="70" selection-end-line="52" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding />
         </state>
       </provider>
