@@ -79,7 +79,7 @@ public class LoanFileServlet extends HttpServlet {
             ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
             if(loanTypes!=null) {
                 loanTypeExist = true;
-                request.setAttribute("anyLoanTypeExist", loanTypeExist);
+                request.setAttribute("loanTypeExist", loanTypeExist);
                 request.setAttribute("loanTypes", loanTypes);
             }
         } catch (Exception e) {

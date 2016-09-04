@@ -13,6 +13,8 @@
 <body>
 <div class="box-in">
     <br>
+    <h1>لطفا شماره مشتری مورد نظر را وارد کنید</h1>
+    <br>
     <form action="LoanFileServlet">
         <input type="text" name="action" value="retrieve-customer-and-loan-type" hidden>
         <table align="center">
@@ -20,7 +22,7 @@
                 <td>شماره مشتری</td>
                 <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
                 <td><input class="button" type="submit" value="بازیابی مشتری"></td>
-                <td><a href="real_customer_management.jsp" class="button">بازگشت به صفحه قبل</a></td>
+                <td><a href="loan_management.jsp" class="button">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
     </form>
@@ -28,7 +30,6 @@
     <hr>
     <br>
     <% int customerExist = (int) request.getAttribute("customerExist");%>
-    <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
 
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
@@ -37,7 +38,7 @@
                 <% RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer"); %>
                 <input type="text" name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
 
-                <table>
+                <table align="center">
                     <tr>
                         <td> نام و نام خانوادگی مشتری :</td>
                         <td><%=realCustomer.getFirstName()%><%=realCustomer.getLastName()%>
@@ -46,6 +47,7 @@
                     <tr>
                         <td> نوع تسهیلات :</td>
                         <td>
+                            <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
                             <c:choose>
                                 <c:when test="<%=loanTypeExist%>">
                                     <% ArrayList<LoanType> loanTypes = (ArrayList<LoanType>) request.getAttribute("loanTypes"); %>
