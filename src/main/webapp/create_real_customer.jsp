@@ -7,7 +7,6 @@
 </head>
 <body>
 <div class="box-in">
-    <br>
     <div><h1>لطفا اطلاعات مشتری را وارد نمایید:</h1></div>
     <br>
     <form action="RealCustomerServlet" method="get">

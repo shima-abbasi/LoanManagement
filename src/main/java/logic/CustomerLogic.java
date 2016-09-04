@@ -25,11 +25,11 @@ public class CustomerLogic {
         RealCustomer realCustomer = new RealCustomer();
 
         if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID)) {
-            logger.info("Empty fields");
+            logger.info("Empty field");
             throw new RequiredFieldException("لطفا اطلاعات مشتری را بطور کامل وارد کنید!");
         }
         else if (!RealCustomerLogic.validateUniqueCustomer(internationalID))
-            throw new NoValidatedCustomerException();
+            throw new NoValidatedCustomerException("مشتری با کد ملی وارد شده در سیستم موجود می باشد!");
         else {
             realCustomer.setCustomerNumber(generateCustomerNumber());
             realCustomer.setFirstName(firstName);

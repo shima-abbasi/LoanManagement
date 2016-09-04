@@ -63,6 +63,31 @@ public class RealCustomerServlet extends HttpServlet {
         out.println(output);
     }
 
+    private void searchRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String customerNumber = request.getParameter("customerNumber");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String fatherName = request.getParameter("fatherName");
+        String dateOfBirth = request.getParameter("dateOfBirth");
+        String internationalID = request.getParameter("internationalID");
+        String output = "";
+        try {
+            List<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
+            if (realCustomerResult.size() == 0) {
+                output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
+            } else {
+                output = OutputGenerator.generateRealCustomerResult(realCustomerResult);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println(output);
+
+    }
 
     private void deleteRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -103,30 +128,6 @@ public class RealCustomerServlet extends HttpServlet {
         out.println(output);
     }
 
-    private void searchRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String customerNumber = request.getParameter("customerNumber");
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String fatherName = request.getParameter("fatherName");
-        String dateOfBirth = request.getParameter("dateOfBirth");
-        String internationalID = request.getParameter("internationalID");
-        String output = "";
-        try {
-            List<RealCustomer> realCustomerResult = CustomerLogic.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
-            if (realCustomerResult.size() == 0) {
-                output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
-            } else {
-                output = OutputGenerator.generateRealCustomerResult(realCustomerResult);
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        response.setContentType("text/html; charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println(output);
-
-    }
 
     private void retrieveRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
