@@ -31,7 +31,6 @@ public class RealCustomerLogic {
         RealCustomerCRUD.createRealCustomer(realCustomer);
         return realCustomer;
     }
-}
 
 
     public static int generateCustomerNumber() throws SQLException {
@@ -56,8 +55,8 @@ public class RealCustomerLogic {
         }
     }
 
-    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException {
-        return RealCustomerCRUD.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
+    public static List<RealCustomer> searchCustomer(RealCustomer realCustomer) throws SQLException {
+        return RealCustomerCRUD.searchCustomer(realCustomer);
 
 
     }
@@ -86,7 +85,7 @@ public class RealCustomerLogic {
     }
 
     private static void validateCustomerInformation(RealCustomer realCustomer)
-            throws RequiredFieldException, IncorrectFormatException{
+            throws RequiredFieldException, IncorrectFormatException {
 
         if (realCustomer.getFirstName().equals(null) || realCustomer.getFirstName().isEmpty()) {
             logger.error("Required first name field");

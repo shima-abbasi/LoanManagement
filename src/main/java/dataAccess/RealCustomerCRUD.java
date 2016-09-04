@@ -35,15 +35,19 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String
-            lastName, String fatherName, String dateOfBirth, String internationalID) {
-
+    public static List<RealCustomer> searchCustomer(RealCustomer realCustomer) {
+        List<RealCustomer> customers = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        String hql = generateHQL(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
-        List<RealCustomer> customers = session.createQuery(hql).list();
-        session.close();
-        return customers;
+        try {
+            String hql = generateHQL(realCustomer);
+            customers = session.createQuery(hql).list();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+        } finally {
+            session.close();
+            logger.info("session closed!");
+            return customers;
+        }
     }
 
     public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
@@ -72,9 +76,15 @@ public class RealCustomerCRUD {
         session.close();
     }
 
-    public static String generateHQL(String customerNumber, String firstName, String
-            lastName, String fatherName, String dateOfBirth, String internationalID) {
+    public static String generateHQL(RealCustomer realCustomer) {
         StringBuilder stringBuilder = new StringBuilder();
+        String customerNumber = String.valueOf(realCustomer.getCustomerNumber());
+        String firstName = realCustomer.getFirstName();
+        String lastName = realCustomer.getLastName();
+        String fatherName = realCustomer.getFatherName();
+        String dateOfBirth = realCustomer.getDateOfBirth();
+        String internationalID = realCustomer.getInternationalID();
+
         if (customerNumber != "" | firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
             stringBuilder.append("FROM RealCustomer rc where");
             int count = 0;

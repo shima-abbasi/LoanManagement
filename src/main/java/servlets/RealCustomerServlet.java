@@ -5,6 +5,7 @@ import exceptions.IncorrectFormatException;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
 import logic.RealCustomerLogic;
+import org.apache.log4j.Logger;
 import output.OutputGenerator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,8 @@ import java.util.List;
  * Created by Dotin school 5 on 8/6/2016.
  */
 public class RealCustomerServlet extends HttpServlet {
+    static Logger logger = Logger.getLogger(RealCustomerServlet.class);
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
@@ -53,7 +56,7 @@ public class RealCustomerServlet extends HttpServlet {
             RealCustomer realCustomerObject = RealCustomerLogic.setCustomerInfo(realCustomer);
             output = OutputGenerator.generateRealCustomer(realCustomerObject);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         } catch (NoValidatedCustomerException | RequiredFieldException | IncorrectFormatException e) {
             output = OutputGenerator.generateMessage(e.getMessage(), "create_real_customer.jsp");
         }
@@ -63,25 +66,26 @@ public class RealCustomerServlet extends HttpServlet {
     }
 
     private void searchRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        RealCustomer realCustomer = new RealCustomer();
 
-        String customerNumber = request.getParameter("customerNumber");
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String fatherName = request.getParameter("fatherName");
-        String dateOfBirth = request.getParameter("dateOfBirth");
-        String internationalID = request.getParameter("internationalID");
+        realCustomer.setCustomerNumber(Integer.parseInt(request.getParameter("customerNumber")));
+        realCustomer.setFirstName( request.getParameter("firstName"));
+        realCustomer.setLastName(request.getParameter("lastName"));
+        realCustomer.setFatherName( request.getParameter("fatherName"));
+        realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
+        realCustomer.setInternationalID( request.getParameter("internationalID"));
         String output = "";
         try {
-            List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
+            List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(realCustomer);
             if (realCustomerResult.size() == 0) {
+                logger.info("Not found any customer!");
                 output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
             } else {
                 output = OutputGenerator.generateRealCustomerResult(realCustomerResult);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
-
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println(output);
