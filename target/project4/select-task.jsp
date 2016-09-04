@@ -8,6 +8,7 @@
 <body>
 <div class="box-in">
     <div><h1>لطفا پنل مدیریت مورد نظر را انتخاب کنید:</h1></div>
+    <br>
     <form action="real_customer_management.jsp">
         <button class="button" type="submit">مدیریت مشتری</button>
     </form>

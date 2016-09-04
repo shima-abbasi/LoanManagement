@@ -5,6 +5,7 @@ import dataAccess.entity.RealCustomer;
 import exceptions.DataNotFoundException;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
@@ -25,6 +26,9 @@ public class RealCustomerLogic extends CustomerLogic {
             if (results.size() > 0) {
                 bool = false;
             }
+        } catch (HibernateException e) {
+            logger.warn(e.getMessage());
+            throw e ;
         } finally {
             session.close();
             return bool;
