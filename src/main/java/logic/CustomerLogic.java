@@ -4,6 +4,8 @@ import dataAccess.RealCustomerCRUD;
 import dataAccess.entity.RealCustomer;
 import exceptions.NoValidatedCustomerException;
 import exceptions.RequiredFieldException;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
@@ -15,10 +17,17 @@ import java.util.List;
  * Created by Dotin school 5 on 8/7/2016.
  */
 public class CustomerLogic {
+
+    static Logger logger = Logger.getLogger(CustomerLogic.class);
+
     public static RealCustomer setCustomerInfo(String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException, NoValidatedCustomerException, RequiredFieldException {
+
         RealCustomer realCustomer = new RealCustomer();
-        if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
-            throw new RequiredFieldException("وارد کردن تمام فیلدها الزامی است");
+
+        if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID)) {
+            logger.info("Empty fields");
+            throw new RequiredFieldException("لطفا اطلاعات مشتری را بطور کامل وارد کنید!");
+        }
         else if (!RealCustomerLogic.validateUniqueCustomer(internationalID))
             throw new NoValidatedCustomerException();
         else {

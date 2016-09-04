@@ -3,18 +3,14 @@ package servlets;
 import dataAccess.entity.LoanFile;
 import dataAccess.entity.LoanType;
 import dataAccess.entity.RealCustomer;
-import exceptions.DataNotFoundException;
 import logic.LoanFileLogic;
 import logic.LoanTypeLogic;
 import logic.RealCustomerLogic;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 

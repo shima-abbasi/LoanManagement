@@ -1,6 +1,6 @@
 body {
     font-size: 12px;
-    background: url(https://ib.bpi.ir/App_Themes/PasargadResponsive/images/Login/Blacklogintexture.jpg) repeat !important;
+    background: url(http://uupload.ir/files/0z2p_money-dollars-rubber-band-bank-photo-hd-wallpaper.jpg) no-repeat;
     font-family: "B Nazanin";
     font-weight: 300;
     direction: rtl;
@@ -16,7 +16,7 @@ body {
 
 #Loginbutton {
     border-radius: 4px;
-    background-color: gold;
+    background-color: #BBAA17;
     border: none;
     color: black;
     text-align: center;
@@ -65,7 +65,7 @@ body {
     cursor: pointer;
     outline: none;
     color: black;
-    background-color:gold;
+    background-color:#C09B38;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -77,7 +77,7 @@ body {
 .button:hover {background-color: goldenrod}
 
 .button:active {
-    background-color: goldenrod;
+    background-color: #BD9325;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
@@ -86,91 +86,14 @@ body {
     margin: 0 auto;
     height: 300px;}
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .box-in{
-    background-color: #f3f3f3;
-    padding: 10px 20px 250px 20px;
+    background-color: #E7E8CE;
+    padding: 30px 20px 50px 20px;
+    margin: 100px 100px 100px 100px;
     text-align: center;
 
 }
-
-     /* The Modal (background) */
- .modal {
-     display: none; /* Hidden by default */
-     position: fixed; /* Stay in place */
-     z-index: 1; /* Sit on top */
-     padding-top: 100px; /* Location of the box */
-     left: 0;
-     top: 0;
-     width: 100%; /* Full width */
-     height: 100%; /* Full height */
-     overflow: auto; /* Enable scroll if needed */
-     background-color: rgb(0,0,0); /* Fallback color */
-     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
- }
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
 
 
 .loader {
@@ -211,19 +134,11 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
-
-
-
-.entry:not(:first-of-type)
-{
-    margin-top: 10px;
-}
-
-.glyphicon
-{
-    font-size: 12px;
-}
-
 td {
     padding:2px;
+}
+
+p{
+    color: burlywood;
+    font-size: large;
 }

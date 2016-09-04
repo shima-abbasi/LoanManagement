@@ -22,7 +22,6 @@ public class LoanTypeServlet extends HttpServlet {
         String loanName = request.getParameter("loanName");
         Float interestRate = Float.parseFloat(request.getParameter("interestRate"));
 
-        //ArrayList<GrantCondition> grantConditions = request.getParameter("grantConditions");
 
         try {
             LoanType loanType = LoanTypeLogic.createLoanType(loanName, interestRate);

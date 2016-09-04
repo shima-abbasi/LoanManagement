@@ -20,9 +20,7 @@ import java.util.List;
  * Created by Dotin school 5 on 8/6/2016.
  */
 public class RealCustomerServlet extends HttpServlet {
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
         String action = request.getParameter("action");
@@ -52,14 +50,13 @@ public class RealCustomerServlet extends HttpServlet {
         String internationalID = request.getParameter("internationalID");
         String output = "";
 
-        try {RealCustomer realCustomer = CustomerLogic.setCustomerInfo(firstName, lastName, fatherName, dateOfBirth, internationalID);
+        try {
+            RealCustomer realCustomer = CustomerLogic.setCustomerInfo(firstName, lastName, fatherName, dateOfBirth, internationalID);
             output = OutputGenerator.generateRealCustomer(realCustomer);
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (NoValidatedCustomerException noValidatedCustomer) {
-            output = OutputGenerator.generateMessage("مشتری با کد ملی وارد شده در سیستم موجود می باشد", "create_real_customer.jsp");
-        } catch (RequiredFieldException e) {
-            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید", "create_real_customer.jsp");
+        } catch (NoValidatedCustomerException | RequiredFieldException e) {
+            output = OutputGenerator.generateMessage(e.getMessage(), "create_real_customer.jsp");
         }
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -133,20 +130,20 @@ public class RealCustomerServlet extends HttpServlet {
 
     private void retrieveRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    int id = Integer.parseInt(request.getParameter("id"));
-    String output="";
-    try {
-        RealCustomer realCustomer = RealCustomerLogic.retrieveCustomer(id);
-        output = OutputGenerator.generateUpdatePage(realCustomer);
+        int id = Integer.parseInt(request.getParameter("id"));
+        String output = "";
+        try {
+            RealCustomer realCustomer = RealCustomerLogic.retrieveCustomer(id);
+            output = OutputGenerator.generateUpdatePage(realCustomer);
 
-    } catch (SQLException e) {
-        output = OutputGenerator.generateMessage("Problem in connection to the database", "search_legal_customer.html");
+        } catch (SQLException e) {
+            output = OutputGenerator.generateMessage("Problem in connection to the database", "search_legal_customer.html");
+        }
+
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println(output);
+
     }
-
-    response.setContentType("text/html; charset=UTF-8");
-    PrintWriter out = response.getWriter();
-    out.println(output);
-
-}
 }
 

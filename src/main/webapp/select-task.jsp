@@ -7,15 +7,13 @@
 </head>
 <body>
 <div class="box-in">
-    <div class="content">
-        <div><h1> نوع عملیات را انتخاب کنید</h1></div>
-        <form action="real_customer_management.jsp">
-            <button class="button" type="submit">مدیریت مشتری</button>
-        </form>
-        <form action="loan_management.jsp">
-            <button class="button" type="submit"> مدیریت تسهیلات</button>
-        </form>
-    </div>
+    <div><h1>لطفا پنل مدیریت مورد نظر را انتخاب کنید:</h1></div>
+    <form action="real_customer_management.jsp">
+        <button class="button" type="submit">مدیریت مشتری</button>
+    </form>
+    <form action="loan_management.jsp">
+        <button class="button" type="submit"> مدیریت تسهیلات</button>
+    </form>
 </div>
 </body>
 </html>

@@ -30,7 +30,7 @@ public class RealCustomerLogic extends CustomerLogic {
     }
     public  static boolean checkField( String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws RequiredFieldException, NoValidatedCustomerException, SQLException {
         if (firstName.trim().length() == 0 | lastName.trim().length() == 0 | fatherName.trim().length() == 0 | dateOfBirth.trim().length() == 0 | internationalID.trim().length() == 0)
-            throw new RequiredFieldException("وارد کردن نام تسهیلات الزامی است.");
+            return false;
         return true;
     }
     public static RealCustomer retrieveCustomer(int id) throws SQLException {

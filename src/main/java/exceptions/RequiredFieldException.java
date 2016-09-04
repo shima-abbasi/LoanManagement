@@ -5,6 +5,6 @@ package exceptions;
  */
 public class RequiredFieldException extends Exception {
     public RequiredFieldException(String s) {
-        super();
+        super(s);
     }
 }
