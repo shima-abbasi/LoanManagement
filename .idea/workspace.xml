@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RealCustomerServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RealCustomerServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+            <state relative-caret-position="67">
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,6 +146,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="LoanTypeServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -208,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/LoanFileLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoanFileServlet.java" />
         <option value="$PROJECT_DIR$/target/classes/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/real_customer_management.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/output/OutputGenerator.java" />
@@ -224,6 +235,7 @@
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/RealCustomerCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
       </list>
     </option>
   </component>
@@ -1110,14 +1122,7 @@
       <workItem from="1472623862841" duration="15866000" />
       <workItem from="1472878346443" duration="27198000" />
       <workItem from="1472973194281" duration="17416000" />
-      <workItem from="1472993749990" duration="7610000" />
-    </task>
-    <task id="LOCAL-00005" summary="commit:D">
-      <created>1472295073583</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1472295073583</updated>
+      <workItem from="1472993749990" duration="7644000" />
     </task>
     <task id="LOCAL-00006" summary="commit:D">
       <created>1472297319325</created>
@@ -1455,11 +1460,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473001332810</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="yeyyyyyyyy\m/">
+      <created>1473001371931</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1473001371931</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177322000" />
+    <option name="totallyTimeSpent" value="177356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1574,7 +1586,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java</url>
-          <line>26</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
@@ -1583,12 +1595,6 @@
           <line>15</line>
           <properties />
           <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="41" />
@@ -1790,6 +1796,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1886,14 +1893,6 @@
             <element signature="e#176#177#0" expanded="false" />
             <element signature="e#206#207#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2008,11 +2007,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="80" column="48" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        <state relative-caret-position="67">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="84" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
+          <folding />
         </state>
       </provider>
     </entry>

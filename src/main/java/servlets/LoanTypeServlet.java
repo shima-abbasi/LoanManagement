@@ -18,11 +18,8 @@ public class LoanTypeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF8");
-
         String loanName = request.getParameter("loanName");
         Float interestRate = Float.parseFloat(request.getParameter("interestRate"));
-
-
         try {
             LoanType loanType = LoanTypeLogic.createLoanType(loanName, interestRate);
             request.setAttribute("LoanType", loanType);

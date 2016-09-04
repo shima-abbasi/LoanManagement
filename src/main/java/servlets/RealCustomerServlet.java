@@ -67,7 +67,6 @@ public class RealCustomerServlet extends HttpServlet {
     }
 
     private void searchRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        RealCustomer realCustomer = new RealCustomer();
 
         String customerNumber = request.getParameter("customerNumber");
         String firstName =request.getParameter("firstName");
