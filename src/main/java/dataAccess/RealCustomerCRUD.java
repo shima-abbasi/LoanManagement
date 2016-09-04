@@ -35,11 +35,11 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static List<RealCustomer> searchCustomer(RealCustomer realCustomer) {
+    public static List<RealCustomer> searchCustomer(String customerNumber,String firstName,String lastName,String fatherName,String dateOfBirth,String internationalID) {
         List<RealCustomer> customers = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = generateHQL(realCustomer);
+            String hql = generateHQL(customerNumber,firstName, lastName, fatherName, dateOfBirth, internationalID);
             customers = session.createQuery(hql).list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
@@ -88,14 +88,8 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static String generateHQL(RealCustomer realCustomer) {
+    public static String generateHQL(String customerNumber,String firstName,String lastName,String fatherName,String dateOfBirth,String internationalID) {
         StringBuilder stringBuilder = new StringBuilder();
-        String customerNumber = String.valueOf(realCustomer.getCustomerNumber());
-        String firstName = realCustomer.getFirstName();
-        String lastName = realCustomer.getLastName();
-        String fatherName = realCustomer.getFatherName();
-        String dateOfBirth = realCustomer.getDateOfBirth();
-        String internationalID = realCustomer.getInternationalID();
 
         if (customerNumber != "" | firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
             stringBuilder.append("FROM RealCustomer rc where");

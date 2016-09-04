@@ -56,8 +56,8 @@ public class RealCustomerLogic {
         }
     }
 
-    public static List<RealCustomer> searchCustomer(RealCustomer realCustomer) throws SQLException {
-        return RealCustomerCRUD.searchCustomer(realCustomer);
+    public static List<RealCustomer> searchCustomer(String customerNumber,String firstName,String lastName,String fatherName,String dateOfBirth,String internationalID) throws SQLException {
+        return RealCustomerCRUD.searchCustomer(customerNumber,firstName, lastName, fatherName, dateOfBirth, internationalID);
 
 
     }
@@ -72,7 +72,7 @@ public class RealCustomerLogic {
         try {
             List results = session.createQuery("select rc.internationalID from RealCustomer as rc where rc.internationalID=:int_id ").setParameter("int_id", internationalID).list();
             if (results.size() > 0) {
-
+                logger.error("Duplicated International ID");
                 throw new NoValidatedCustomerException("مشتری با کد ملی واردشده در سیستم موجود میباشد!");
             }
         } catch (HibernateException e) {

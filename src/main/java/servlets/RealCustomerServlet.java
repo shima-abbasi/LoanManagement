@@ -69,15 +69,15 @@ public class RealCustomerServlet extends HttpServlet {
     private void searchRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         RealCustomer realCustomer = new RealCustomer();
 
-        realCustomer.setCustomerNumber(Integer.parseInt(request.getParameter("customerNumber")));
-        realCustomer.setFirstName(request.getParameter("firstName"));
-        realCustomer.setLastName(request.getParameter("lastName"));
-        realCustomer.setFatherName(request.getParameter("fatherName"));
-        realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
-        realCustomer.setInternationalID(request.getParameter("internationalID"));
+        String customerNumber = request.getParameter("customerNumber");
+        String firstName =request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String fatherName = request.getParameter("fatherName");
+        String dateOfBirth =request.getParameter("dateOfBirth");
+        String internationalID = request.getParameter("internationalID");
         String output = "";
         try {
-            List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(realCustomer);
+            List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(customerNumber,firstName, lastName, fatherName, dateOfBirth, internationalID);
             if (realCustomerResult.size() == 0) {
                 logger.info("Not found any customer!");
                 output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
