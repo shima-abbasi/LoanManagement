@@ -37,22 +37,22 @@ public class RealCustomerLogic {
     public static int generateCustomerNumber() throws SQLException {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-        int customerNumber;
+        int customerNumber = 0;
         try {
             Query query = session.createQuery("select max (rc.customerNumber) from RealCustomer as rc");
             if (query.uniqueResult() != null) {
                 customerNumber = (int) query.uniqueResult() + 1;
                 logger.info("Customer number created: " + customerNumber);
-                return customerNumber;
             } else {
                 logger.info("The first customer number created: " + firstCustomerNumber);
-                return firstCustomerNumber;
+                customerNumber= firstCustomerNumber;
             }
         } catch (HibernateException e) {
             logger.warn(e.getMessage());
         } finally {
             session.close();
             logger.info("session closed!");
+            return customerNumber;
         }
     }
 
@@ -67,20 +67,19 @@ public class RealCustomerLogic {
         RealCustomerCRUD.updateCustomer(realCustomer);
     }
 
-    public static boolean validateUniqueCustomer(String internationalID) throws SQLException {
-        Boolean bool = true;
+    public static void validateUniqueCustomer(String internationalID) throws SQLException, NoValidatedCustomerException {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             List results = session.createQuery("select rc.internationalID from RealCustomer as rc where rc.internationalID=:int_id ").setParameter("int_id", internationalID).list();
             if (results.size() > 0) {
-                bool = false;
+
+                throw new NoValidatedCustomerException("مشتری با کد ملی واردشده در سیستم موجود میباشد!");
             }
         } catch (HibernateException e) {
             logger.warn(e.getMessage());
         } finally {
             session.close();
             logger.info("session closed!");
-            return bool;
         }
     }
 
@@ -108,7 +107,7 @@ public class RealCustomerLogic {
             throw new RequiredFieldException("وارد کردن کد ملی الزامی است.");
         } else {
             if (realCustomer.getInternationalID().trim().length() != 10) {
-                throw new IncorrectFormatException("کد ملی باید دقیقا ده رقم باشد");
+                throw new IncorrectFormatException("کد ملی باید دقیقا ده رقم باشد!");
             } else {
                 String code = realCustomer.getInternationalID().trim();
                 int sum = 0;
@@ -119,7 +118,7 @@ public class RealCustomerLogic {
                 int reminder = sum % 11;
                 if (!(reminder == rightMostNumber) && !(reminder == 11 - rightMostNumber)) {
                     logger.error("International ID is incorrect");
-                    throw new IncorrectFormatException("کد ملی وارد شده صحیح نیست");
+                    throw new IncorrectFormatException("کد ملی وارد شده صحیح نیست!");
                 }
             }
         }

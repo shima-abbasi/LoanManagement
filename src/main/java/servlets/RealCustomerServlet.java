@@ -112,7 +112,7 @@ public class RealCustomerServlet extends HttpServlet {
 
     private void updateRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         RealCustomer realCustomer = new RealCustomer();
-        realCustomer.setCustomerId( Integer.parseInt(request.getParameter("id")));
+        realCustomer.setCustomerId(Integer.parseInt(request.getParameter("id")));
         realCustomer.setFirstName(request.getParameter("firstName"));
         realCustomer.setLastName(request.getParameter("lastName"));
         realCustomer.setFatherName(request.getParameter("fatherName"));
@@ -121,13 +121,12 @@ public class RealCustomerServlet extends HttpServlet {
         String output = "";
         try {
             RealCustomerLogic.updateCustomer(realCustomer);
+            logger.info("Successfully updated ");
             output = OutputGenerator.generateMessage("اطلاعات مشتری با موفقیت اصلاح شد.", "search_real_customer.jsp");
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (RequiredFieldException e) {
-            output = OutputGenerator.generateMessage("لطفا اطلاعات ضروری را تکمیل کنید", "search_real_customer.jsp");
-        } catch (NoValidatedCustomerException e) {
-            output = OutputGenerator.generateMessage("کد ملی تکراری است", "search_real_customer.jsp");
+            logger.error(e.getMessage());
+        } catch (RequiredFieldException | IncorrectFormatException | NoValidatedCustomerException e) {
+            output = OutputGenerator.generateMessage(e.getMessage(), "search_real_customer.jsp");
         }
         response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -144,7 +143,7 @@ public class RealCustomerServlet extends HttpServlet {
             output = OutputGenerator.generateUpdatePage(realCustomer);
 
         } catch (SQLException e) {
-            output = OutputGenerator.generateMessage("Problem in connection to the database", "search_legal_customer.html");
+            logger.error(e.getMessage());
         }
 
         response.setContentType("text/html; charset=UTF-8");

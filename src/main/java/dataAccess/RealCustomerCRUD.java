@@ -53,18 +53,23 @@ public class RealCustomerCRUD {
     public static void updateCustomer(RealCustomer realCustomer) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
         try {
-        RealCustomer realCustomerObject = session.get(RealCustomer.class,realCustomer.getCustomerId());
-        realCustomerObject.setFirstName(realCustomer.getFirstName());
-        realCustomerObject.setLastName(realCustomer.getLastName());
-        realCustomerObject.setFatherName(realCustomer.getFatherName());
-        realCustomerObject.setDateOfBirth(realCustomer.getDateOfBirth());
-        realCustomerObject.setInternationalID(realCustomer.getInternationalID());
-        session.update(realCustomerObject);
-        session.getTransaction().commit();
-        session.close();
-        System.out.println("Successfully updated " + realCustomerObject.toString());
+            RealCustomer realCustomerObject = session.get(RealCustomer.class, realCustomer.getCustomerId());
+            realCustomerObject.setFirstName(realCustomer.getFirstName());
+            realCustomerObject.setLastName(realCustomer.getLastName());
+            realCustomerObject.setFatherName(realCustomer.getFatherName());
+            realCustomerObject.setDateOfBirth(realCustomer.getDateOfBirth());
+            realCustomerObject.setInternationalID(realCustomer.getInternationalID());
+            session.update(realCustomerObject);
+            transaction.commit();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+            transaction.rollback();
+        } finally {
+            logger.info("session closed!");
+            session.close();
+        }
     }
 
     public static void deleteCustomer(int id) {
@@ -136,11 +141,17 @@ public class RealCustomerCRUD {
     }
 
     public static RealCustomer retrieveCustomerById(int id) throws SQLException {
-        RealCustomer realCustomer;
+        RealCustomer realCustomer=null;
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        realCustomer = session.get(RealCustomer.class, id);
-        return realCustomer;
+        try {
+            realCustomer = session.get(RealCustomer.class, id);
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+        } finally {
+            session.close();
+            logger.info("session closed!");
+            return realCustomer;
+        }
     }
 
     public static RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException, DataNotFoundException {
