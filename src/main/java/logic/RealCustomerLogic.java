@@ -27,6 +27,7 @@ public class RealCustomerLogic {
     public static RealCustomer setCustomerInfo(RealCustomer realCustomer) throws SQLException, NoValidatedCustomerException, RequiredFieldException, IncorrectFormatException {
 
         validateCustomerInformation(realCustomer);
+        validateUniqueCustomer(realCustomer.getInternationalID());
         realCustomer.setCustomerNumber(generateCustomerNumber());
         RealCustomerCRUD.createRealCustomer(realCustomer);
         return realCustomer;
@@ -61,10 +62,9 @@ public class RealCustomerLogic {
 
     }
 
-    public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) throws SQLException, RequiredFieldException, NoValidatedCustomerException {
-        if (!RealCustomerLogic.checkField(firstName, lastName, fatherName, dateOfBirth, internationalID))
-            throw new RequiredFieldException("لطفا فیلدهای ضروری را تکمیل کنید.");
-        RealCustomerCRUD.updateCustomer(id, firstName, lastName, fatherName, dateOfBirth, internationalID);
+    public static void updateCustomer(RealCustomer realCustomer) throws SQLException, RequiredFieldException, NoValidatedCustomerException, IncorrectFormatException {
+        validateCustomerInformation(realCustomer);
+        RealCustomerCRUD.updateCustomer(realCustomer);
     }
 
     public static boolean validateUniqueCustomer(String internationalID) throws SQLException {

@@ -7,6 +7,7 @@ import exceptions.RequiredFieldException;
 import logic.RealCustomerLogic;
 import org.apache.log4j.Logger;
 import output.OutputGenerator;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,11 +46,11 @@ public class RealCustomerServlet extends HttpServlet {
 
     private void createRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         RealCustomer realCustomer = new RealCustomer();
-        realCustomer.setFirstName( request.getParameter("firstName"));
+        realCustomer.setFirstName(request.getParameter("firstName"));
         realCustomer.setLastName(request.getParameter("lastName"));
-        realCustomer.setFatherName( request.getParameter("fatherName"));
+        realCustomer.setFatherName(request.getParameter("fatherName"));
         realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
-        realCustomer.setInternationalID( request.getParameter("internationalID"));
+        realCustomer.setInternationalID(request.getParameter("internationalID"));
         String output = "";
 
         try {
@@ -69,11 +70,11 @@ public class RealCustomerServlet extends HttpServlet {
         RealCustomer realCustomer = new RealCustomer();
 
         realCustomer.setCustomerNumber(Integer.parseInt(request.getParameter("customerNumber")));
-        realCustomer.setFirstName( request.getParameter("firstName"));
+        realCustomer.setFirstName(request.getParameter("firstName"));
         realCustomer.setLastName(request.getParameter("lastName"));
-        realCustomer.setFatherName( request.getParameter("fatherName"));
+        realCustomer.setFatherName(request.getParameter("fatherName"));
         realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
-        realCustomer.setInternationalID( request.getParameter("internationalID"));
+        realCustomer.setInternationalID(request.getParameter("internationalID"));
         String output = "";
         try {
             List<RealCustomer> realCustomerResult = RealCustomerLogic.searchCustomer(realCustomer);
@@ -81,6 +82,7 @@ public class RealCustomerServlet extends HttpServlet {
                 logger.info("Not found any customer!");
                 output = OutputGenerator.generateMessage("مشتری با اطلاعات وارد شده وجود ندارد.", "search_real_customer.jsp");
             } else {
+                logger.info("Customer found!");
                 output = OutputGenerator.generateRealCustomerResult(realCustomerResult);
             }
         } catch (SQLException e) {
@@ -100,7 +102,7 @@ public class RealCustomerServlet extends HttpServlet {
             output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد", "search_real_customer.jsp");
 
         } catch (SQLException e) {
-            output = OutputGenerator.generateMessage("مشتری مورد نظر حذف شد", "search_real_customer.jsp");
+            logger.error(e.getMessage());
         }
 
         response.setContentType("text/html; charset=UTF-8");
@@ -109,15 +111,16 @@ public class RealCustomerServlet extends HttpServlet {
     }
 
     private void updateRealCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String fatherName = request.getParameter("fatherName");
-        String dateOfBirth = request.getParameter("dateOfBirth");
-        String internationalID = request.getParameter("internationalID");
+        RealCustomer realCustomer = new RealCustomer();
+        realCustomer.setCustomerId( Integer.parseInt(request.getParameter("id")));
+        realCustomer.setFirstName(request.getParameter("firstName"));
+        realCustomer.setLastName(request.getParameter("lastName"));
+        realCustomer.setFatherName(request.getParameter("fatherName"));
+        realCustomer.setDateOfBirth(request.getParameter("dateOfBirth"));
+        realCustomer.setInternationalID(request.getParameter("internationalID"));
         String output = "";
         try {
-            RealCustomerLogic.updateCustomer(id, firstName, lastName, fatherName, dateOfBirth, internationalID);
+            RealCustomerLogic.updateCustomer(realCustomer);
             output = OutputGenerator.generateMessage("اطلاعات مشتری با موفقیت اصلاح شد.", "search_real_customer.jsp");
         } catch (SQLException e) {
             e.printStackTrace();

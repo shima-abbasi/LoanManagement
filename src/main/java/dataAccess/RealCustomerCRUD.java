@@ -50,30 +50,37 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static void updateCustomer(int id, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
+    public static void updateCustomer(RealCustomer realCustomer) {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        RealCustomer realCustomer = session.get(RealCustomer.class, id);
-        realCustomer.setFirstName(firstName);
-        realCustomer.setLastName(lastName);
-        realCustomer.setFatherName(fatherName);
-        realCustomer.setDateOfBirth(dateOfBirth);
-        realCustomer.setInternationalID(internationalID);
-        session.update(realCustomer);
+        try {
+        RealCustomer realCustomerObject = session.get(RealCustomer.class,realCustomer.getCustomerId());
+        realCustomerObject.setFirstName(realCustomer.getFirstName());
+        realCustomerObject.setLastName(realCustomer.getLastName());
+        realCustomerObject.setFatherName(realCustomer.getFatherName());
+        realCustomerObject.setDateOfBirth(realCustomer.getDateOfBirth());
+        realCustomerObject.setInternationalID(realCustomer.getInternationalID());
+        session.update(realCustomerObject);
         session.getTransaction().commit();
         session.close();
-        System.out.println("Successfully updated " + realCustomer.toString());
+        System.out.println("Successfully updated " + realCustomerObject.toString());
     }
 
     public static void deleteCustomer(int id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
-        RealCustomer realCustomer = session.get(RealCustomer.class, id);
-        session.delete(realCustomer);
-        System.out.println("Deleted Successfully");
-        session.getTransaction().commit();
-        session.close();
+        Transaction transaction = session.beginTransaction();
+        try {
+            RealCustomer realCustomer = session.get(RealCustomer.class, id);
+            session.delete(realCustomer);
+            logger.info("Customer deleted!");
+            transaction.commit();
+        } catch (HibernateException e) {
+            transaction.rollback();
+            logger.error(e.getMessage());
+        } finally {
+            session.close();
+        }
     }
 
     public static String generateHQL(RealCustomer realCustomer) {
