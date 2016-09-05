@@ -44,12 +44,9 @@ public class GrantConditionServlet extends HttpServlet {
             logger.info("Loan type created successfully!");
             request.setAttribute("text", "نوع تسهیلات جدید با موفقیت ثبت شد!");
             request.setAttribute("url", "/create_loan_type.jsp");
-        } catch (NotSupportedException e) {
-            request.setAttribute("header", "عملیات ناموفق");
-            request.setAttribute("text", "خطا در ذخیره نوع تسهیلات. لطفا مجددا تلاش کنید!" + "\n" + e.getMessage());
+        } catch ( OutOfRangeException e) {
+            request.setAttribute("text",  e.getMessage());
             request.setAttribute("url", "/create_loan_type.jsp");
-        } catch (OutOfRangeException e) {
-            e.printStackTrace();
         }
         getServletConfig().getServletContext().getRequestDispatcher("/info.jsp").forward(request, response);
     }

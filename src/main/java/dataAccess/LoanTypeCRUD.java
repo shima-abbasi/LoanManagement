@@ -3,11 +3,10 @@ package dataAccess;
 import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
 import exceptions.DataNotFoundException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.apache.log4j.Logger;
+import org.hibernate.*;
 import org.omg.SendingContext.RunTime;
+import servlets.RealCustomerServlet;
 import util.HibernateUtil;
 
 import java.util.ArrayList;
@@ -18,23 +17,27 @@ import java.util.Set;
  * Created by Dotin school 5 on 8/29/2016.
  */
 public class LoanTypeCRUD {
+    static Logger logger = Logger.getLogger(RealCustomerServlet.class);
+
     public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) {
         Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
         try {
-            session.beginTransaction();
             session.save(loanType);
             for (GrantCondition grantCondition : grantConditions) {
                 grantCondition.setLoanType(loanType);
                 session.save(grantCondition);
+                transaction.commit();
             }
-            session.getTransaction().commit();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+            transaction.rollback();
+        } finally {
+            session.close();
         }
     }
 
     public static List<LoanType> retrieveLoanTypes() throws DataNotFoundException {
-
         List loanTypes;
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -47,15 +50,14 @@ public class LoanTypeCRUD {
         return loanTypes;
     }
 
-    public static LoanType retrieveLoanTypeById (int loanTypeId) throws DataNotFoundException {
+    public static LoanType retrieveLoanTypeById(int loanTypeId) throws DataNotFoundException {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             LoanType loanType = session.get(LoanType.class, loanTypeId);
             session.getTransaction().commit();
             return loanType;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             throw new DataNotFoundException("تسهیلات یافت نشد.");
         }
     }

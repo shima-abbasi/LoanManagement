@@ -26,7 +26,6 @@ public class GrantConditionLogic {
 
     private static void validateGrantConditions(Set<GrantCondition> grantConditions)
             throws OutOfRangeException {
-
         for(GrantCondition grantCondition : grantConditions){
             if(grantCondition.getMinDuration()> grantCondition.getMaxDuration()){
                 logger.error("Duration out of range exception accoured !");
