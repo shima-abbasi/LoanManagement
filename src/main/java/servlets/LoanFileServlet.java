@@ -42,12 +42,8 @@ public class LoanFileServlet extends HttpServlet {
             loanFile.setAmount(new BigDecimal(request.getParameter("amount")));
             loanFile.setDuration(Integer.parseInt(request.getParameter("duration")));
             LoanFileLogic.create(customerNumber, loanTypeId, loanFile);
-
-            request.setAttribute("header", "عملیات موفق");
             request.setAttribute("text", "پرونده تسهیلاتی با موفقیت ثبت شد.");
         } catch (Exception e) {
-            request.setAttribute("header", "عملیات ناموفق");
-
             request.setAttribute("text", "خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
         } finally {
             try {

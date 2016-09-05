@@ -12,8 +12,7 @@
 </head>
 <body>
 <div class="box-in">
-    <br>
-    <h1>لطفا شماره مشتری مورد نظر را وارد کنید</h1>
+    <div><h1>لطفا شماره مشتری مورد نظر را وارد کنید:</h1></div>
     <br>
     <form action="LoanFileServlet">
         <input type="text" name="action" value="retrieve-customer-and-loan-type" hidden>
@@ -22,12 +21,10 @@
                 <td>شماره مشتری</td>
                 <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
                 <td><input class="button" type="submit" value="بازیابی مشتری"></td>
-                <td><a href="loan_management.jsp" class="button">بازگشت به صفحه قبل</a></td>
             </tr>
         </table>
     </form>
     <br>
-    <hr>
     <br>
     <% int customerExist = (int) request.getAttribute("customerExist");%>
 
@@ -41,7 +38,7 @@
                 <table align="center">
                     <tr>
                         <td> نام و نام خانوادگی مشتری :</td>
-                        <td><%=realCustomer.getFirstName()%><%=realCustomer.getLastName()%>
+                        <td><%=realCustomer.getFirstName()%> <%=realCustomer.getLastName()%>
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +56,7 @@
                                     </select>
                                 </c:when>
                                 <c:otherwise>
-                                    <p>داده ای وجود ندارد</p>
+                                    <p>داده ای وجود ندارد!</p>
                                 </c:otherwise>
                             </c:choose>
                         </td>
@@ -73,7 +70,9 @@
                         <td><input type="text" name="amount"></td>
                     </tr>
                 </table>
-                <input class="button" type="submit" value="ثبت">
+                <div>
+                    <input class="button" type="submit" value="ثبت تسهیلات">
+                </div>
             </form>
         </c:when>
         <c:when test="<%=(customerExist==0)%>">
@@ -82,6 +81,11 @@
         </c:when>
     </c:choose>
     <br>
+    <div>
+        <form action="loan_management.jsp">
+            <button class="button" type="submit">بازگشت به صفحه قبل</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>
