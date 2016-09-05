@@ -49,6 +49,8 @@ public class LoanFileServlet extends HttpServlet {
             LoanFileLogic.create(customerNumber, loanTypeId, loanFile);
             logger.info("loan type created successfully!");
             request.setAttribute("text", "پرونده تسهیلاتی با موفقیت ثبت شد.");
+            request.setAttribute("url", "create_loan_file.jsp");
+
         } catch (Exception e) {
             request.setAttribute("text", e.getMessage());
         } finally {
