@@ -28,11 +28,11 @@ public class GrantConditionLogic {
             throws OutOfRangeException {
         for(GrantCondition grantCondition : grantConditions){
             if(grantCondition.getMinDuration()> grantCondition.getMaxDuration()){
-                logger.error("Duration out of range exception accoured !");
+                logger.error("Duration out of range exception occurred !");
                 throw new OutOfRangeException("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
             }
             if(grantCondition.getMinAmount().compareTo(grantCondition.getMaxAmount())==1){
-                logger.error("Amount out of range exception accoured!");
+                logger.error("Amount out of range exception occurred!");
                 throw new OutOfRangeException("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
             }
         }
