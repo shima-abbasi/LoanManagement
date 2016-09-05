@@ -39,7 +39,7 @@ public class LoanFileServlet extends HttpServlet {
         }
     }
 
-    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
+    private void createLoanFile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             LoanFile loanFile = new LoanFile();
         try {
             int customerNumber = Integer.parseInt(request.getParameter("confirmedCustomerNumber"));
@@ -51,15 +51,11 @@ public class LoanFileServlet extends HttpServlet {
             request.setAttribute("text", "پرونده تسهیلاتی با موفقیت ثبت شد.");
         } catch (Exception e) {
             request.setAttribute("text", e.getMessage());
-        } finally {
-            try {
-                request.setAttribute("url", "LoanFileServlet?action=first-run");
-                getServletConfig().getServletContext().getRequestDispatcher("/info.jsp").forward(request, response);
-            } catch (ServletException | IOException e) {
-                e.printStackTrace();
-            }
         }
-    }
+                request.setAttribute("url", "loan_management.jsp");
+                getServletConfig().getServletContext().getRequestDispatcher("/info.jsp").forward(request, response);
+
+        }
 
     private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
