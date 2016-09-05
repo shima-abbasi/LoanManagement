@@ -40,17 +40,17 @@ public class LoanFileServlet extends HttpServlet {
     }
 
     private void createLoanFile(HttpServletRequest request, HttpServletResponse response) {
-
-        try {
             LoanFile loanFile = new LoanFile();
+        try {
             int customerNumber = Integer.parseInt(request.getParameter("confirmedCustomerNumber"));
             int loanTypeId = Integer.parseInt(request.getParameter("loanType"));
             loanFile.setAmount(new BigDecimal(request.getParameter("amount")));
             loanFile.setDuration(Integer.parseInt(request.getParameter("duration")));
             LoanFileLogic.create(customerNumber, loanTypeId, loanFile);
+            logger.info("loan type created successfully!");
             request.setAttribute("text", "پرونده تسهیلاتی با موفقیت ثبت شد.");
         } catch (Exception e) {
-            request.setAttribute("text", "خطا در ثبت پرونده تسهیلاتی جدیدایجاد شده است." + "\n" + e.getMessage());
+            request.setAttribute("text", e.getMessage());
         } finally {
             try {
                 request.setAttribute("url", "LoanFileServlet?action=first-run");
@@ -64,23 +64,23 @@ public class LoanFileServlet extends HttpServlet {
     private void retrieveCustomerLoanType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int customerNumber = Integer.parseInt(request.getParameter("customerNumber"));
-        int customerExist = 0;
-        boolean loanTypeExist = false;
+            int customerExist = 0;
+            boolean loanTypeExist = false;
         try {
             RealCustomer realCustomer = RealCustomerLogic.retrieveCustomerByCustomerNumber(customerNumber);
             if (realCustomer != null) {
                 customerExist = 1;
-            request.setAttribute("customerExist", customerExist);
-            request.setAttribute("customerNumber", customerNumber);
-            request.setAttribute("realCustomer", realCustomer);
+
+                request.setAttribute("customerNumber", customerNumber);
+                request.setAttribute("realCustomer", realCustomer);
+
+                ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
+                if (loanTypes != null) {
+                    loanTypeExist = true;
+                    request.setAttribute("loanTypes", loanTypes);
+                }
             }
-            ArrayList<LoanType> loanTypes = LoanTypeLogic.retrieveLoanTypes();
-            if(loanTypes!=null) {
-                loanTypeExist = true;
-                request.setAttribute("loanTypeExist", loanTypeExist);
-                request.setAttribute("loanTypes", loanTypes);
-            }
-        } catch (DataNotFoundException e){
+        } catch (DataNotFoundException e) {
             request.setAttribute("text", e.getMessage());
             request.setAttribute("url", "create_loan_file");
 
@@ -89,8 +89,10 @@ public class LoanFileServlet extends HttpServlet {
             request.setAttribute("text", e.getMessage());
             request.setAttribute("url", "create_loan_file");
         }
+        request.setAttribute("customerExist", customerExist);
+        request.setAttribute("loanTypeExist", loanTypeExist);
+        getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
 
-        getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
 
     }
 

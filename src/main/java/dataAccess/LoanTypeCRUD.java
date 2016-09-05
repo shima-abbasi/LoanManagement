@@ -51,14 +51,19 @@ public class LoanTypeCRUD {
     }
 
     public static LoanType retrieveLoanTypeById(int loanTypeId) throws DataNotFoundException {
+        LoanType loanType = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            LoanType loanType = session.get(LoanType.class, loanTypeId);
-            session.getTransaction().commit();
+            loanType = session.get(LoanType.class, loanTypeId);
+            if (loanType == null) {
+                throw new DataNotFoundException("تسهیلات یافت نشد!");
+            }
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
+        } finally {
+            logger.info("session closed!");
+            session.close();
             return loanType;
-        } catch (Exception e) {
-            throw new DataNotFoundException("تسهیلات یافت نشد.");
         }
     }
 }

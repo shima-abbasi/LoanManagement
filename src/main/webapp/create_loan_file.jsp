@@ -76,8 +76,7 @@
             </form>
         </c:when>
         <c:when test="<%=(customerExist==0)%>">
-            <h2>خطا</h2>
-            <p>شماره مشتری یافت نشد</p>
+            <h3>شماره مشتری یافت نشد!</h3>
         </c:when>
     </c:choose>
     <br>
