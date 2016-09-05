@@ -35,11 +35,11 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static List<RealCustomer> searchCustomer(String customerNumber,String firstName,String lastName,String fatherName,String dateOfBirth,String internationalID) {
+    public static List<RealCustomer> searchCustomer(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
         List<RealCustomer> customers = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = generateHQL(customerNumber,firstName, lastName, fatherName, dateOfBirth, internationalID);
+            String hql = generateHQL(customerNumber, firstName, lastName, fatherName, dateOfBirth, internationalID);
             customers = session.createQuery(hql).list();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
@@ -88,7 +88,7 @@ public class RealCustomerCRUD {
         }
     }
 
-    public static String generateHQL(String customerNumber,String firstName,String lastName,String fatherName,String dateOfBirth,String internationalID) {
+    public static String generateHQL(String customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
         StringBuilder stringBuilder = new StringBuilder();
 
         if (customerNumber != "" | firstName != "" | lastName != "" | fatherName != "" | dateOfBirth != "" | internationalID != "") {
@@ -135,7 +135,7 @@ public class RealCustomerCRUD {
     }
 
     public static RealCustomer retrieveCustomerById(int id) throws SQLException {
-        RealCustomer realCustomer=null;
+        RealCustomer realCustomer = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             realCustomer = session.get(RealCustomer.class, id);
@@ -149,22 +149,23 @@ public class RealCustomerCRUD {
     }
 
     public static RealCustomer retrieveCustomerByCustomerNumber(int customerNumber) throws SQLException, DataNotFoundException {
-        RealCustomer realCustomer;
+        RealCustomer realCustomer = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            session.beginTransaction();
-            Query query = session.createQuery("from RealCustomer rc where rc.customerNumber=:cn");
-            query.setParameter("cn", customerNumber);
-            realCustomer = (RealCustomer) query.uniqueResult();
-            if (query.uniqueResult() == null) {
-                throw new DataNotFoundException("مشتری مورد نظر یافت نشد");
+            Object object = session.createQuery("from RealCustomer rc where rc.customerNumber=:cn").setParameter("cn", customerNumber).uniqueResult();
+            if (object == null) {
+                logger.error("customer not found!");
+                throw new DataNotFoundException("مشتری مورد نظر یافت نشد!");
             } else {
-                realCustomer = (RealCustomer) query.uniqueResult();
+                realCustomer = (RealCustomer) object;
             }
 
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
         } finally {
+            logger.info("session closed!");
             session.close();
+            return realCustomer;
         }
-        return realCustomer;
     }
 }

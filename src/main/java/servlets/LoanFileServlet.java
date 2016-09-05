@@ -3,21 +3,27 @@ package servlets;
 import dataAccess.entity.LoanFile;
 import dataAccess.entity.LoanType;
 import dataAccess.entity.RealCustomer;
+import exceptions.DataNotFoundException;
 import logic.LoanFileLogic;
 import logic.LoanTypeLogic;
 import logic.RealCustomerLogic;
+import org.apache.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
  * Created by Dotin school 5 on 8/31/2016.
  */
 public class LoanFileServlet extends HttpServlet {
+    static Logger logger = Logger.getLogger(RealCustomerServlet.class);
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
@@ -74,10 +80,15 @@ public class LoanFileServlet extends HttpServlet {
                 request.setAttribute("loanTypeExist", loanTypeExist);
                 request.setAttribute("loanTypes", loanTypes);
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (DataNotFoundException e){
+            request.setAttribute("text", e.getMessage());
+            request.setAttribute("url", "create_loan_file");
+
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
         }
-            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
+
+        getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
 
     }
 
