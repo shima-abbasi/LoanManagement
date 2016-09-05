@@ -86,6 +86,8 @@ public class LoanFileServlet extends HttpServlet {
 
         } catch (SQLException e) {
             logger.error(e.getMessage());
+            request.setAttribute("text", e.getMessage());
+            request.setAttribute("url", "create_loan_file");
         }
 
         getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request,response);
