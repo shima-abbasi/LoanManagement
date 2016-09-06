@@ -28,7 +28,7 @@
     </table>
     <hr>
     <br>
-    <h2>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید</h2>
+    <h2>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید:</h2>
     <table align="center">
         <tr>
             <td> نام</td>
@@ -57,7 +57,7 @@
         </tr>
     </table>
     <br>
-    <input class="button" type="submit" value="اضافه کردن شروط" onclick="addRow()">
+    <input class="button" type="button" value="اضافه کردن شروط" onclick="addRow()">
     <br>
     <hr>
 

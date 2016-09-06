@@ -4,6 +4,16 @@
 <%@ page isELIgnored="false" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%
+    RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer");
+    String customerName = realCustomer == null ? "" : realCustomer.getFirstName() + " " + realCustomer.getLastName();
+    Object objectBoolean = request.getAttribute("loanTypeExist");
+    boolean loanTypeExist = objectBoolean == null ? false : true ;
+    Object objectInt = request.getAttribute("customerExist");
+    int customerExist = objectInt==null ? -1 : 1 ;
+%>
+
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -26,25 +36,22 @@
     </form>
     <br>
     <br>
-    <% int customerExist = (int) request.getAttribute("customerExist");%>
 
     <c:choose>
         <c:when test="<%=(customerExist==1)%>">
             <form action="LoanFileServlet">
                 <input type="text" name="action" value="create" hidden>
-                <% RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer"); %>
                 <input type="text" name="confirmedCustomerNumber" value="<%=realCustomer.getCustomerNumber()%>" hidden>
 
                 <table align="center">
                     <tr>
                         <td> نام و نام خانوادگی مشتری :</td>
-                        <td><%=realCustomer.getFirstName()%> <%=realCustomer.getLastName()%>
+                        <td><%=customerName%>
                         </td>
                     </tr>
                     <tr>
                         <td> نوع تسهیلات :</td>
                         <td>
-                            <%boolean loanTypeExist = (boolean) request.getAttribute("loanTypeExist"); %>
                             <c:choose>
                                 <c:when test="<%=loanTypeExist%>">
                                     <% ArrayList<LoanType> loanTypes = (ArrayList<LoanType>) request.getAttribute("loanTypes"); %>

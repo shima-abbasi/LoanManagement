@@ -4,6 +4,7 @@ import dataAccess.entity.GrantCondition;
 import dataAccess.entity.LoanType;
 import exceptions.OutOfRangeException;
 import logic.GrantConditionLogic;
+import logic.LoanTypeLogic;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -40,7 +41,9 @@ public class GrantConditionServlet extends HttpServlet {
                 grantConditions.add(grantCondition);
             }
 
-            GrantConditionLogic.createLoanType(new LoanType(loanName, interestRate), grantConditions);
+            LoanType loanType = new LoanType(loanName, interestRate);
+            loanType.setGrantConditions(grantConditions);
+            LoanTypeLogic.finalizeLoanType(loanType);
             logger.info("Loan type created successfully!");
             request.setAttribute("text", "نوع تسهیلات جدید با موفقیت ثبت شد!");
             request.setAttribute("url", "/create_loan_type.jsp");

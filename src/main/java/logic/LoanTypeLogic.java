@@ -4,6 +4,7 @@ import dataAccess.LoanTypeCRUD;
 import dataAccess.entity.LoanFile;
 import dataAccess.entity.LoanType;
 import exceptions.DataNotFoundException;
+import exceptions.OutOfRangeException;
 import exceptions.RequiredFieldException;
 import org.apache.log4j.Logger;
 import org.hibernate.Hibernate;
@@ -49,5 +50,10 @@ public class LoanTypeLogic {
 
     public static LoanType retrieveLoanTypeById(int loanTypeId) throws DataNotFoundException {
         return LoanTypeCRUD.retrieveLoanTypeById(loanTypeId);
+    }
+
+    public static void finalizeLoanType(LoanType loanType) throws OutOfRangeException {
+        GrantConditionLogic.validateGrantConditions(loanType.getGrantConditions());
+        LoanTypeCRUD.createLoanType(loanType);
     }
 }

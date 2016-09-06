@@ -29,7 +29,7 @@ public class LoanTypeServlet extends HttpServlet {
             RequestDispatcher dispatcher = getServletConfig().getServletContext().getRequestDispatcher("/create_grant_condition.jsp");
             dispatcher.forward(request, response);
         } catch (RequiredFieldException e) {
-            request.setAttribute("text", "خطا در ثبت نوع تسهیلات ایجاد شده است." );
+            request.setAttribute("text", "خطا در ثبت نوع تسهیلات ایجاد شده است.");
             request.setAttribute("url", "create_loan_type.jsp");
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/info.jsp");
             dispatcher.forward(request, response);

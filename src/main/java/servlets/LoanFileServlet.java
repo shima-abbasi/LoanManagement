@@ -34,9 +34,6 @@ public class LoanFileServlet extends HttpServlet {
         if ("create".equalsIgnoreCase(action)) {
             createLoanFile(request, response);
         }
-        if ("first-run".equalsIgnoreCase(action)) {
-            firstRun(request, response);
-        }
     }
 
     private void createLoanFile(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -90,15 +87,5 @@ public class LoanFileServlet extends HttpServlet {
         getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
 
 
-    }
-
-    private void firstRun(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            request.setAttribute("customerExist", -1);
-            request.setAttribute("customerNumber", "");
-            getServletConfig().getServletContext().getRequestDispatcher("/create_loan_file.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
-        }
     }
 }

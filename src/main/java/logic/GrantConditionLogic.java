@@ -21,10 +21,10 @@ public class GrantConditionLogic {
     static Logger logger = Logger.getLogger(RealCustomerServlet.class);
     public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) throws OutOfRangeException {
         validateGrantConditions(grantConditions);
-        LoanTypeCRUD.createLoanType(loanType, grantConditions);
+        LoanTypeCRUD.createLoanType(loanType);
     }
 
-    private static void validateGrantConditions(Set<GrantCondition> grantConditions)
+    public static void validateGrantConditions(Set<GrantCondition> grantConditions)
             throws OutOfRangeException {
         for(GrantCondition grantCondition : grantConditions){
             if(grantCondition.getMinDuration()> grantCondition.getMaxDuration()){

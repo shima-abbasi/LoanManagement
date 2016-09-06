@@ -19,19 +19,19 @@ import java.util.Set;
 public class LoanTypeCRUD {
     static Logger logger = Logger.getLogger(RealCustomerServlet.class);
 
-    public static void createLoanType(LoanType loanType, Set<GrantCondition> grantConditions) {
+    public static void createLoanType(LoanType loanType) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
         try {
+            Transaction transaction = session.beginTransaction();
             session.save(loanType);
-            for (GrantCondition grantCondition : grantConditions) {
+            for (GrantCondition grantCondition : loanType.getGrantConditions()) {
                 grantCondition.setLoanType(loanType);
                 session.save(grantCondition);
-                transaction.commit();
             }
+            transaction.commit();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-            transaction.rollback();
+//            transaction.rollback();
         } finally {
             session.close();
         }

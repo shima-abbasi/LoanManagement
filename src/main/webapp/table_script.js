@@ -7,8 +7,9 @@ function addRow() {
 
     var table = document.getElementById("GrantConditionShowTable");
     var rowNumber = table.rows.length;
-    if(parseInt(minDuration.value)>parseInt(maxDuration.value))
+    if(parseInt(minDuration.value)>parseInt(maxDuration.value)) {
         alert("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
+    }
     else if(parseFloat(minAmount.value) >parseFloat(maxAmount.value))
         alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
    else {
