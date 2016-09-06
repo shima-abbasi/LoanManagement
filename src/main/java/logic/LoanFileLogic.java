@@ -21,8 +21,8 @@ public class LoanFileLogic {
 
         List<GrantCondition> grantConditions = GrantConditionLogic.retrieveConditionsByLoanId(loanTypeId);
         for (GrantCondition grantCondition : grantConditions) {
-            if (loanFile.getDuration() <= grantCondition.getMaxDuration() && loanFile.getDuration() >= grantCondition.getMinDuration()&&loanFile.getAmount().compareTo(grantCondition.getMaxAmount()) == -1 && loanFile.getAmount().compareTo(grantCondition.getMinAmount()) == 1) {
-                return grantCondition ;
+            if (loanFile.getDuration() <= grantCondition.getMaxDuration() && loanFile.getDuration() >= grantCondition.getMinDuration() && loanFile.getAmount().compareTo(grantCondition.getMaxAmount()) == -1 && loanFile.getAmount().compareTo(grantCondition.getMinAmount()) == 1) {
+                return grantCondition;
             }
         }
         throw new OutOfRangeException("تسهیلاتی با محدوده زمان و مبلغ وارد شده موجود نمی باشد!");
@@ -41,11 +41,12 @@ public class LoanFileLogic {
 
     public static void create(int customerNumber, int loanTypeId, LoanFile loanFile) throws DataNotFoundException, OutOfRangeException, SQLException {
 
-            LoanType loanType = retrieveLoanType(loanTypeId);
-            validateLoanFile(loanFile, loanTypeId);
-            loanFile.setLoanType(loanType);
-            RealCustomer realCustomer = retrieveCustomer(customerNumber);
-            loanFile.setRealCustomer(realCustomer);
-            LoanFileCRUD.saveLoanFile(loanFile);
+        LoanType loanType = retrieveLoanType(loanTypeId);
+        GrantCondition grantCondition = validateLoanFile(loanFile, loanTypeId);
+        loanType.setGrantConditions(grantCondition);
+        loanFile.setLoanType(loanType);
+        RealCustomer realCustomer = retrieveCustomer(customerNumber);
+        loanFile.setRealCustomer(realCustomer);
+        LoanFileCRUD.saveLoanFile(loanFile);
     }
 }

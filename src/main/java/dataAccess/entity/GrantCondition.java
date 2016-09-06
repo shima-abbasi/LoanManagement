@@ -3,6 +3,7 @@ package dataAccess.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Set;
 
 /**
  * Created by Dotin school 5 on 8/21/2016.
@@ -35,7 +36,7 @@ public class GrantCondition implements Serializable {
     @JoinColumn(name = "LOAN_TYPE_ID", nullable = false)
     private LoanType loanType;
 
-//-------------setter getter---------------
+    //-------------setter getter---------------
     public int getGrantId() {
         return grantId;
     }

@@ -80,4 +80,7 @@ public class LoanType implements Serializable {
     public void setLoanFiles(Set<LoanFile> loanFiles) {
         this.loanFiles = loanFiles;
     }
+
+    public void setGrantConditions(GrantCondition grantCondition) {
+    }
 }
