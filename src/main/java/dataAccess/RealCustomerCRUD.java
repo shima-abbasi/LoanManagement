@@ -81,7 +81,6 @@ public class RealCustomerCRUD {
             logger.info("Customer deleted!");
             transaction.commit();
         } catch (HibernateException e) {
-            transaction.rollback();
             logger.error(e.getMessage());
         } finally {
             session.close();

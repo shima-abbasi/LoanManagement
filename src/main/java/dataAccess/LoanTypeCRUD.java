@@ -31,7 +31,6 @@ public class LoanTypeCRUD {
             transaction.commit();
         } catch (HibernateException e) {
             logger.error(e.getMessage());
-//            transaction.rollback();
         } finally {
             session.close();
         }
@@ -43,8 +42,8 @@ public class LoanTypeCRUD {
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             loanTypes = session.createQuery("from LoanType").list();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        } catch (HibernateException e) {
+            logger.error(e.getMessage());
             throw new DataNotFoundException("هیچ نوع تسهیلاتی ثبت نشده است!");
         }
         return loanTypes;

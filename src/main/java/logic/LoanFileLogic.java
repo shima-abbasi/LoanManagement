@@ -17,17 +17,15 @@ import java.util.List;
  * Created by Dotin school 5 on 8/31/2016.
  */
 public class LoanFileLogic {
-    public static void validateLoanFile(LoanFile loanFile, int loanTypeId) throws OutOfRangeException, DataNotFoundException {
+    public static GrantCondition validateLoanFile(LoanFile loanFile, int loanTypeId) throws OutOfRangeException, DataNotFoundException {
 
         List<GrantCondition> grantConditions = GrantConditionLogic.retrieveConditionsByLoanId(loanTypeId);
         for (GrantCondition grantCondition : grantConditions) {
-            if (loanFile.getDuration() > grantCondition.getMaxDuration() || loanFile.getDuration() < grantCondition.getMinDuration()) {
-                throw new OutOfRangeException("مدت زمان وارد شده در محدوده مدت زمان های شرایط تسهیلات صدق نمی کند!");
-            }
-            if (loanFile.getAmount().compareTo(grantCondition.getMaxAmount()) == 1 || loanFile.getAmount().compareTo(grantCondition.getMinAmount()) == -1) {
-                throw new OutOfRangeException("مبلغ وارد شده در محدوده مبلغ های شرایط تسهیلات صدق نمی کند!");
+            if (loanFile.getDuration() <= grantCondition.getMaxDuration() && loanFile.getDuration() >= grantCondition.getMinDuration()&&loanFile.getAmount().compareTo(grantCondition.getMaxAmount()) == -1 && loanFile.getAmount().compareTo(grantCondition.getMinAmount()) == 1) {
+                return grantCondition ;
             }
         }
+        throw new OutOfRangeException("تسهیلاتی با محدوده زمان و مبلغ وارد شده موجود نمی باشد!");
     }
 
     public static RealCustomer retrieveCustomer(int customerNumber)
