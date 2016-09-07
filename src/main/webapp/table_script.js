@@ -7,7 +7,7 @@ function addRow() {
 
     var table = document.getElementById("GrantConditionShowTable");
     var rowNumber = table.rows.length;
-    if (grantName == null || minDuration == null || maxDuration == null || minAmount == null || maxAmount == null) {
+    if (grantName.value=="" || minDuration.value == "" || maxDuration.value == "" || minAmount.value == "" || maxAmount.value == "") {
         alert("لطفا اطلاعات ضروری را تکمیل کنید!")
     }
     else {
@@ -31,7 +31,6 @@ function addRow() {
         row.insertCell(5).innerHTML = '<input type="text" name="maxAmount' + rowNumber + '" value="' + maxAmount.value + '" readonly>';
         row.insertCell(6).innerHTML = '<button  onClick="deleteRow(this)">حذف شرط</button>';
     }
-    addFooter();
     document.getElementById("grantName").value = "";
     document.getElementById("minDuration").value = "";
     document.getElementById("maxDuration").value = "";
@@ -65,6 +64,7 @@ function makeTable() {
     headerCell = document.createElement("TH");
     headerCell.innerHTML = "عملیات";
     headerRow.appendChild(headerCell);
+    addFooter();
 }
 
 function deleteRow(obj) {
