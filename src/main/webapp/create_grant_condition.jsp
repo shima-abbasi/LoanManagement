@@ -33,28 +33,28 @@
     <h2>لطفا مشخصات شروط اعطای مورد نظر را وارد نمایید:</h2>
     <table align="center">
         <tr>
-            <td> نام</td>
+            <td> نام:</td>
             <td><input type="text" id="grantName"
                 >
             </td>
         </tr>
         <tr>
-            <td> حداقل مدت قرارداد</td>
+            <td> حداقل مدت قرارداد:</td>
             <td><input type="text" id="minDuration"
             ></td>
         </tr>
         <tr>
-            <td> حداکثر مدت قرارداد</td>
+            <td> حداکثر مدت قرارداد:</td>
             <td><input type="text" id="maxDuration"
             ></td>
         </tr>
         <tr>
-            <td> حداقل مبلغ قرارداد</td>
+            <td> حداقل مبلغ قرارداد:</td>
             <td><input type="text" id="minAmount"
             ></td>
         </tr>
         <tr>
-            <td> حداکثر مبلغ قرارداد</td>
+            <td> حداکثر مبلغ قرارداد:</td>
             <td><input type="text" id="maxAmount"
             ></td>
         </tr>

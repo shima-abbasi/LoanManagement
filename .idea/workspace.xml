@@ -8,7 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="table_script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/table_script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="create_grant_condition.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="-27">
+              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -65,14 +59,14 @@
       <file leaf-file-name="search_real_customer.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="235">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="real_customer_management.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="real_customer_management.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/real_customer_management.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
@@ -97,7 +91,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
               <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1473252737947" expanded="true" signature="79:460" placeholder="..." />
+                <marker date="1473252737947" expanded="true" signature="86:193" placeholder="..." />
+                <marker date="1473252737947" expanded="true" signature="168:185" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,8 +113,8 @@
       <file leaf-file-name="create_real_customer.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="340">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -125,8 +123,18 @@
       <file leaf-file-name="create_loan_type.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+            <state relative-caret-position="200">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_loan_file.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -187,8 +195,6 @@
         <option value="$PROJECT_DIR$/src/main/java/exceptions/RequiredFieldException.java" />
         <option value="$PROJECT_DIR$/src/main/java/exceptions/NoValidatedCustomerException.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/select-task.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/exceptions/IncorrectFormatException.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/CustomerLogic.java" />
@@ -205,13 +211,15 @@
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/entity/LoanType.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/LoanFileLogic.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/loan_management.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/table_script.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
       </list>
     </option>
   </component>
@@ -1093,14 +1101,7 @@
       <workItem from="1473055555377" duration="7610000" />
       <workItem from="1473064687090" duration="11388000" />
       <workItem from="1473144407865" duration="13825000" />
-      <workItem from="1473232801268" duration="12625000" />
-    </task>
-    <task id="LOCAL-00030" summary="yeyyyyyyyy\m/">
-      <created>1472645566825</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1472645566825</updated>
+      <workItem from="1473232801268" duration="12906000" />
     </task>
     <task id="LOCAL-00031" summary="yeyyyyyyyy\m/">
       <created>1472646000826</created>
@@ -1438,11 +1439,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473252622403</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Final commit/ByeBye school:D">
+      <created>1473252801916</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1473252801916</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222816000" />
+    <option name="totallyTimeSpent" value="223097000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1718,7 +1726,7 @@
         <state relative-caret-position="160">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#176#177#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1838,14 +1846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-740">
-          <caret line="5" column="55" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dataAccess/entity/GrantCondition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -1867,7 +1867,7 @@
         <state relative-caret-position="250">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1876,54 +1876,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/loan_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1946,8 +1898,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/search_real_customer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="235">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1956,6 +1908,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/loan_management.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/info.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1473252737947" expanded="true" signature="79:460" placeholder="..." />
+            <marker date="1473252737947" expanded="true" signature="86:193" placeholder="..." />
+            <marker date="1473252737947" expanded="true" signature="168:185" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
           <folding />
         </state>
       </provider>
