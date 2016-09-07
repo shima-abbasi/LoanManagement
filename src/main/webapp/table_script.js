@@ -7,7 +7,7 @@ function addRow() {
 
     var table = document.getElementById("GrantConditionShowTable");
     var rowNumber = table.rows.length;
-    if (grantName.value=="" || minDuration.value == "" || maxDuration.value == "" || minAmount.value == "" || maxAmount.value == "") {
+    if (grantName.value == "" || minDuration.value == "" || maxDuration.value == "" || minAmount.value == "" || maxAmount.value == "") {
         alert("لطفا اطلاعات ضروری را تکمیل کنید!")
     }
     else {
@@ -16,8 +16,12 @@ function addRow() {
         }
         else if (parseFloat(minAmount.value) > parseFloat(maxAmount.value))
             alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
-        else
+        else if (rowNumber == 0) {
             makeTable();
+        }
+        else {
+            deleteFooter()
+        }
     }
 
     if (grantName.value != "" && minAmount.value != "" && maxAmount.value != "" && minDuration.value != "" && maxDuration.value != "") {
@@ -30,13 +34,13 @@ function addRow() {
         row.insertCell(4).innerHTML = '<input type="text" name="minAmount' + rowNumber + '" value="' + minAmount.value + '" readonly>';
         row.insertCell(5).innerHTML = '<input type="text" name="maxAmount' + rowNumber + '" value="' + maxAmount.value + '" readonly>';
         row.insertCell(6).innerHTML = '<button  onClick="deleteRow(this)">حذف شرط</button>';
+        addFooter()
     }
     document.getElementById("grantName").value = "";
     document.getElementById("minDuration").value = "";
     document.getElementById("maxDuration").value = "";
     document.getElementById("minAmount").value = "";
     document.getElementById("maxAmount").value = "";
-
 }
 
 function makeTable() {
@@ -64,7 +68,6 @@ function makeTable() {
     headerCell = document.createElement("TH");
     headerCell.innerHTML = "عملیات";
     headerRow.appendChild(headerCell);
-    addFooter();
 }
 
 function deleteRow(obj) {
