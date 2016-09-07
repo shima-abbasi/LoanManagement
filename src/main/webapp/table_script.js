@@ -7,13 +7,18 @@ function addRow() {
 
     var table = document.getElementById("GrantConditionShowTable");
     var rowNumber = table.rows.length;
-    if (parseInt(minDuration.value) > parseInt(maxDuration.value)) {
-        alert("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
+    if (grantName == null || minDuration == null || maxDuration == null || minAmount == null || maxAmount == null) {
+        alert("لطفا اطلاعات ضروری را تکمیل کنید!")
     }
-    else if (parseFloat(minAmount.value) > parseFloat(maxAmount.value))
-        alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
-    else
-        makeTable();
+    else {
+        if (parseInt(minDuration.value) > parseInt(maxDuration.value)) {
+            alert("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
+        }
+        else if (parseFloat(minAmount.value) > parseFloat(maxAmount.value))
+            alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
+        else
+            makeTable();
+    }
 
     if (grantName.value != "" && minAmount.value != "" && maxAmount.value != "" && minDuration.value != "" && maxDuration.value != "") {
         rowNumber = table.rows.length;
@@ -32,7 +37,7 @@ function addRow() {
     document.getElementById("maxDuration").value = "";
     document.getElementById("minAmount").value = "";
     document.getElementById("maxAmount").value = "";
-    
+
 }
 
 function makeTable() {

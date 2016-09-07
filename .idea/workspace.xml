@@ -8,8 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/table_script.js" afterPath="$PROJECT_DIR$/src/main/webapp/table_script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,21 +95,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table_script.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="table_script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/table_script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+            <state relative-caret-position="380">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_grant_condition.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_grant_condition.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1580">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+            <state relative-caret-position="20">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -213,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/table_script.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/table_script.js" />
       </list>
     </option>
   </component>
@@ -1096,14 +1096,7 @@
       <workItem from="1473055555377" duration="7610000" />
       <workItem from="1473064687090" duration="11388000" />
       <workItem from="1473144407865" duration="13825000" />
-      <workItem from="1473232801268" duration="9600000" />
-    </task>
-    <task id="LOCAL-00023" summary="yeyyyyyyyy\m/">
-      <created>1472564470394</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1472564470394</updated>
+      <workItem from="1473232801268" duration="9874000" />
     </task>
     <task id="LOCAL-00024" summary="yeyyyyyyyy\m/">
       <created>1472564624807</created>
@@ -1441,11 +1434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473247118865</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Final commit/ByeBye school:D">
+      <created>1473248284935</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1473248284935</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219791000" />
+    <option name="totallyTimeSpent" value="220065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1943,18 +1943,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/table_script.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        <state relative-caret-position="20">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/table_script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1580">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
         </state>
       </provider>
