@@ -11,10 +11,10 @@ function addRow() {
         alert("لطفا اطلاعات ضروری را تکمیل کنید!")
     }
     else {
-        if (parseInt(minDuration.value) >= parseInt(maxDuration.value)) {
+        if (parseInt(minDuration.value) > parseInt(maxDuration.value)) {
             alert("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
         }
-        else if (parseFloat(minAmount.value) >= parseFloat(maxAmount.value))
+        else if (parseFloat(minAmount.value) > parseFloat(maxAmount.value))
             alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
         else if (rowNumber == 0) {
             makeTable();
@@ -92,7 +92,7 @@ function addFooter() {
         var footer = table.createTFoot();
         var footerRow = footer.insertRow(0);
         var cell = footerRow.insertCell(0);
-        cell.innerHTML = '<div><input type="submit" class="button" value=" ثبت شرایط " ></div> <input type="text" name="rowNumber" value="' + table.rows.length + '" hidden>';
+        cell.innerHTML = '<div align="center"><input type="submit" class="button" value=" ثبت شرایط " ></div> <input type="text" name="rowNumber" value="' + table.rows.length + '" hidden>';
     }
 }
 
