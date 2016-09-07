@@ -20,10 +20,10 @@ public class LoanTypeServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF8");
-        String loanName = request.getParameter("loanName");
+        String loanTypeName = request.getParameter("loanTypeName");
         Float interestRate = Float.parseFloat(request.getParameter("interestRate"));
         try {
-            LoanType loanType = LoanTypeLogic.createLoanType(loanName, interestRate);
+            LoanType loanType = LoanTypeLogic.createLoanType(loanTypeName, interestRate);
             logger.info("Loan type created, need conditions!");
             request.setAttribute("LoanType", loanType);
             RequestDispatcher dispatcher = getServletConfig().getServletContext().getRequestDispatcher("/create_grant_condition.jsp");

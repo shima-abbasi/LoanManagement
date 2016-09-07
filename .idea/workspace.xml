@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_loan_type.jsp" afterPath="$PROJECT_DIR$/target/project4/create_loan_type.jsp" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,17 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoanTypeServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoanTypeServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+            <state relative-caret-position="240">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_loan_type.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_loan_type.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -198,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/RealCustomerLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/RealCustomerServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/GrantConditionCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/table_script.js" />
         <option value="$PROJECT_DIR$/src/main/java/logic/LoanTypeLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/GrantConditionLogic.java" />
@@ -214,6 +214,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
       </list>
     </option>
   </component>
@@ -1095,14 +1096,7 @@
       <workItem from="1473055555377" duration="7610000" />
       <workItem from="1473064687090" duration="11388000" />
       <workItem from="1473144407865" duration="13825000" />
-      <workItem from="1473232801268" duration="8320000" />
-    </task>
-    <task id="LOCAL-00021" summary="yeyyyyyyyy\m/">
-      <created>1472557590192</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1472557590192</updated>
+      <workItem from="1473232801268" duration="8434000" />
     </task>
     <task id="LOCAL-00022" summary="yeyyyyyyyy\m/">
       <created>1472562494205</created>
@@ -1440,11 +1434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473246732004</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Final commit/ByeBye school:D">
+      <created>1473247004276</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1473247004277</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218511000" />
+    <option name="totallyTimeSpent" value="218625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1942,18 +1943,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding />
         </state>
       </provider>

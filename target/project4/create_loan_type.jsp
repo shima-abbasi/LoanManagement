@@ -13,7 +13,7 @@
         <table align="center">
             <tr>
                 <td> نام نوع تسهیلات</td>
-                <td><input type="text" name="loanName" required="required"
+                <td><input type="text" name="loanTypeName" required="required"
                            oninvalid="alert('لطفا نام تسهیلات را وارد کنید')"/></td>
             </tr>
             <tr>
