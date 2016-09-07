@@ -8,9 +8,12 @@
     RealCustomer realCustomer = (RealCustomer) request.getAttribute("realCustomer");
     String customerName = realCustomer == null ? "" : realCustomer.getFirstName() + " " + realCustomer.getLastName();
     Object objectBoolean = request.getAttribute("loanTypeExist");
-    boolean loanTypeExist = objectBoolean == null ? false : true;
+    boolean loanTypeExist = objectBoolean == null ? false : (boolean)objectBoolean ;
     Object objectInt = request.getAttribute("customerExist");
-    int customerExist = objectInt == null ? -1 : 1;
+    int customerExist = objectInt == null ? -1 : (int)objectInt;
+    Object customerNumberObject =  request.getAttribute("customerNumber");
+    String customerNumber = customerNumberObject == null ? "" : (String) customerNumberObject ;
+
 %>
 
 <html>
@@ -27,8 +30,8 @@
         <input type="text" name="action" value="retrieve-customer-and-loan-type" hidden>
         <table align="center">
             <tr>
-                <td>شماره مشتری</td>
-                <td><input type="text" name="customerNumber" value="<%=request.getAttribute("customerNumber")%>"></td>
+                <td>شماره مشتری:</td>
+                <td><input type="text" name="customerNumber" value="<%=customerNumber%>"></td>
                 <td><input class="button" type="submit" value="بازیابی مشتری"></td>
             </tr>
         </table>
