@@ -7,39 +7,32 @@ function addRow() {
 
     var table = document.getElementById("GrantConditionShowTable");
     var rowNumber = table.rows.length;
-    if(parseInt(minDuration.value)>parseInt(maxDuration.value)) {
+    if (parseInt(minDuration.value) > parseInt(maxDuration.value)) {
         alert("حداکثر مدت قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
     }
-    else if(parseFloat(minAmount.value) >parseFloat(maxAmount.value))
+    else if (parseFloat(minAmount.value) > parseFloat(maxAmount.value))
         alert("حداکثر مبلغ قرارداد باید بزرگتر از حداقل مدت قرارداد باشد.");
-   else {
-        if (rowNumber == 0) {
-            makeTable();
-        }
-        else {
-            deleteFooter();
-        }
+    else
+        makeTable();
 
-
-        if (grantName.value != "" && minAmount.value != "" && maxAmount.value != "" && minDuration.value != "" && maxDuration.value != "") {
-            rowNumber = table.rows.length;
-            var row = table.insertRow(rowNumber);
-            row.insertCell(0).innerHTML = rowNumber.toString();
-            row.insertCell(1).innerHTML = '<input type="text" name="grantName' + rowNumber + '" value="' + grantName.value + '" readonly >';
-            row.insertCell(2).innerHTML = '<input type="text" name="minDuration' + rowNumber + '" value="' + minDuration.value + '" readonly>';
-            row.insertCell(3).innerHTML = '<input type="text" name="maxDuration' + rowNumber + '" value="' + maxDuration.value + '" readonly>';
-            row.insertCell(4).innerHTML = '<input type="text" name="minAmount' + rowNumber + '" value="' + minAmount.value + '" readonly>';
-            row.insertCell(5).innerHTML = '<input type="text" name="maxAmount' + rowNumber + '" value="' + maxAmount.value + '" readonly>';
-            row.insertCell(6).innerHTML = '<button  onClick="deleteRow(this)">حذف شرط</button>';
-        }
-        addFooter();
-        document.getElementById("grantName").value = "";
-        document.getElementById("minDuration").value = "";
-        document.getElementById("maxDuration").value = "";
-        document.getElementById("minAmount").value = "";
-        document.getElementById("maxAmount").value = "";
-
-   }
+    if (grantName.value != "" && minAmount.value != "" && maxAmount.value != "" && minDuration.value != "" && maxDuration.value != "") {
+        rowNumber = table.rows.length;
+        var row = table.insertRow(rowNumber);
+        row.insertCell(0).innerHTML = rowNumber.toString();
+        row.insertCell(1).innerHTML = '<input type="text" name="grantName' + rowNumber + '" value="' + grantName.value + '" readonly >';
+        row.insertCell(2).innerHTML = '<input type="text" name="minDuration' + rowNumber + '" value="' + minDuration.value + '" readonly>';
+        row.insertCell(3).innerHTML = '<input type="text" name="maxDuration' + rowNumber + '" value="' + maxDuration.value + '" readonly>';
+        row.insertCell(4).innerHTML = '<input type="text" name="minAmount' + rowNumber + '" value="' + minAmount.value + '" readonly>';
+        row.insertCell(5).innerHTML = '<input type="text" name="maxAmount' + rowNumber + '" value="' + maxAmount.value + '" readonly>';
+        row.insertCell(6).innerHTML = '<button  onClick="deleteRow(this)">حذف شرط</button>';
+    }
+    addFooter();
+    document.getElementById("grantName").value = "";
+    document.getElementById("minDuration").value = "";
+    document.getElementById("maxDuration").value = "";
+    document.getElementById("minAmount").value = "";
+    document.getElementById("maxAmount").value = "";
+    
 }
 
 function makeTable() {
