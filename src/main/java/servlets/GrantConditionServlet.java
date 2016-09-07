@@ -27,7 +27,7 @@ public class GrantConditionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF8");
         try {
-            String loanName = request.getParameter("loanName");
+            String loanTypeName = request.getParameter("loanTypeName");
             Float interestRate = Float.parseFloat(request.getParameter("interestRate"));
             int rowNumber = Integer.parseInt(request.getParameter("rowNumber"));
             Set<GrantCondition> grantConditions = new HashSet<GrantCondition>();
@@ -41,7 +41,7 @@ public class GrantConditionServlet extends HttpServlet {
                 grantConditions.add(grantCondition);
             }
 
-            LoanType loanType = new LoanType(loanName, interestRate);
+            LoanType loanType = new LoanType(loanTypeName, interestRate);
             loanType.setGrantConditions(grantConditions);
             LoanTypeLogic.finalizeLoanType(loanType);
             logger.info("Loan type created successfully!");

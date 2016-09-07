@@ -8,8 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c6a19c4a-41e8-4982-baba-fa12e7569e8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/loan_management.jsp" afterPath="$PROJECT_DIR$/target/project4/loan_management.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" afterPath="$PROJECT_DIR$/target/project4/create_grant_condition.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/project4/create_loan_file.jsp" afterPath="$PROJECT_DIR$/target/project4/create_loan_file.jsp" />
     </list>
     <ignored path="LoanManagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,33 +55,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrantConditionServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GrantConditionServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GrantConditionLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/GrantConditionLogic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="500">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_loan_file.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_loan_file.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create_real_customer.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="29" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -128,8 +128,8 @@
       <file leaf-file-name="create_grant_condition.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state relative-caret-position="-519">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -201,9 +201,7 @@
         <option value="$PROJECT_DIR$/src/main/java/dataAccess/GrantConditionCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_loan_type.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoanTypeServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/table_script.js" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/LoanTypeLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/GrantConditionLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/LoanFileServlet.java" />
@@ -215,6 +213,8 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/LoanFileLogic.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/loan_management.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/create_loan_file.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java" />
       </list>
     </option>
   </component>
@@ -1096,14 +1096,7 @@
       <workItem from="1473055555377" duration="7610000" />
       <workItem from="1473064687090" duration="11388000" />
       <workItem from="1473144407865" duration="13825000" />
-      <workItem from="1473232801268" duration="7561000" />
-    </task>
-    <task id="LOCAL-00019" summary="yeyyyyyyyy\m/">
-      <created>1472554357693</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1472554357693</updated>
+      <workItem from="1473232801268" duration="8048000" />
     </task>
     <task id="LOCAL-00020" summary="yeyyyyyyyy\m/">
       <created>1472556233152</created>
@@ -1441,11 +1434,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473245595739</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Final commit/ByeBye school:D">
+      <created>1473246244872</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1473246244872</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217752000" />
+    <option name="totallyTimeSpent" value="218239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1461,7 +1461,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4610028" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1736,14 +1736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.1.0.Final/hibernate-core-5.1.0.Final.jar!/org/hibernate/criterion/Restrictions.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1879,28 +1871,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/GrantConditionLogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1957,6 +1931,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_real_customer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/create_grant_condition.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/GrantConditionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,7 @@
 <%@ page import="dataAccess.entity.RealCustomer" %>
 <%@ page import="dataAccess.entity.LoanType" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.io.Serializable" %>
 <%@ page isELIgnored="false" contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -12,7 +13,7 @@
     Object objectInt = request.getAttribute("customerExist");
     int customerExist = objectInt == null ? -1 : (int)objectInt;
     Object customerNumberObject =  request.getAttribute("customerNumber");
-    String customerNumber = customerNumberObject == null ? "" : (String) customerNumberObject ;
+    Serializable customerNumber = customerNumberObject == null ? "" : (int) customerNumberObject ;
 
 %>
 
