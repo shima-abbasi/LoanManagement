@@ -18,16 +18,13 @@
         <div><h1> نوع عملیات را انتخاب کنید:</h1></div>
 
         <form name="submitForm" action="" method="get">
-            <table align="center">
-                <tr><input class="button" type="button" onclick="doAction('create_loan_type.jsp');"
-                           value="تعریف تسهیلات جدید"/></tr>
-                <tr><input class="button" type="button" onclick="doAction('create_loan_file.jsp');"
-                           value="تشکیل پرونده تسهیلات"/>
-                </tr>
-                <tr><input class="button" type="button" onclick="doAction('select-task.jsp');"
-                           value="بازگشت به صفحه قبل"/>
-                </tr>
-            </table>
+            <input class="button" type="button" onclick="doAction('create_loan_type.jsp');"
+                   value="تعریف تسهیلات جدید"/>
+            <input class="button" type="button" onclick="doAction('create_loan_file.jsp');"
+                   value="تشکیل پرونده تسهیلات"/>
+
+            <input class="button" type="button" onclick="doAction('select-task.jsp');"
+                   value="بازگشت به صفحه قبل"/>
         </form>
 
     </div>

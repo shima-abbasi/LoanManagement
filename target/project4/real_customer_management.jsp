@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <link href="css/style.css" rel="stylesheet">
     <title>انتخاب نوع مشتری</title>
+    <script type="text/javascript">
+        function doAction(actionType) {
+            document.forms['submitForm'].action = actionType;
+            document.forms['submitForm'].submit();
+        }
+    </script>
 </head>
 <body>
 <div class="box-in">
     <div><h1>لطفا نوع عملیات مورد نظر را انتخاب کنید:</h1></div>
-    <form action="create_real_customer.jsp">
-        <button class="button" type="submit">تعریف مشتری جدید</button>
+    <form name="submitForm" action="">
+        <input class="button" type="button" onclick="doAction('create_real_customer.jsp')" value="تعریف مشتری جدید"/>
+        <input class="button" type="button" onclick="doAction('search_real_customer.jsp')" value="جستجوی مشتری"/>
+        <input class="button" type="button" onclick="doAction('select-task.jsp')" value=" بازگشت به صفحه قبل"/>
     </form>
-    <form action="search_real_customer.jsp">
-        <button class="button" type="submit"> جستجوی مشتری</button>
-    </form>
-    <div>
-        <form action="select-task.jsp">
-            <button class="button" type="submit"> بازگشت به صفحه قبل</button>
-        </form>
-    </div>
 </div>
 </body>
 </html>

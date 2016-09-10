@@ -13,27 +13,27 @@
         <input type="hidden" name="action" value="search">
         <table align="center">
             <tr>
-                <td> شماره مشتری</td>
+                <td> شماره مشتری:</td>
                 <td><input type="text" name="customerNumber"></td>
             </tr>
             <tr>
-                <td> نام</td>
+                <td> نام:</td>
                 <td><input type="text" name="firstName"></td>
             </tr>
             <tr>
-                <td> نام خانوادگی</td>
+                <td> نام خانوادگی:</td>
                 <td><input type="text" name="lastName"></td>
             </tr>
             <tr>
-                <td>نام پدر</td>
+                <td>نام پدر:</td>
                 <td><input type="text" name="fatherName"></td>
             </tr>
             <tr>
-                <td>تاریخ تولد</td>
+                <td>تاریخ تولد:</td>
                 <td><input type="text" name="dateOfBirth"></td>
             </tr>
             <tr>
-                <td>کد ملی</td>
+                <td>کد ملی:</td>
                 <td><input type="text" name="internationalID"></td>
             </tr>
         </table>

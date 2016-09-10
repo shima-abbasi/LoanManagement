@@ -48,7 +48,7 @@
 
                 <table align="center">
                     <tr>
-                        <td> نام و نام خانوادگی مشتری :</td>
+                        <td> نام و نام خانوادگی مشتری:</td>
                         <td><%=customerName%>
                         </td>
                     </tr>
@@ -72,11 +72,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td> مدت قرارداد :</td>
+                        <td> مدت قرارداد:</td>
                         <td><input type="text" name="duration"></td>
                     </tr>
                     <tr>
-                        <td>مبلغ قرارداد :</td>
+                        <td>مبلغ قرارداد:</td>
                         <td><input type="text" name="amount"></td>
                     </tr>
                 </table>
@@ -91,7 +91,7 @@
     </c:choose>
     <br>
     <div>
-        <form action="create_loan_file.jsp">
+        <form action="loan_management.jsp">
             <button class="button" type="submit">بازگشت به صفحه قبل</button>
         </form>
     </div>

@@ -7,14 +7,10 @@
     <title>ورود به سامانه</title>
 </head>
 <body>
-<p id="demo" align="left" > </p>
-<script>
-    document.getElementById("demo").innerHTML = Date();
-</script>
 <div id="LoginHeader"></div>
 <div>
     <form action="select-task.jsp">
-        <button id="Loginbutton"><span>ورود به سامانه </span></button>
+        <input id="Loginbutton" type="submit" value="ورود به سامانه"/>
     </form>
 </div>
 </body>

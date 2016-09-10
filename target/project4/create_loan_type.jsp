@@ -12,12 +12,12 @@
     <form action="LoanTypeServlet" method="post">
         <table align="center">
             <tr>
-                <td> نام نوع تسهیلات</td>
+                <td> نام نوع تسهیلات:</td>
                 <td><input type="text" name="loanTypeName" required="required"
                            oninvalid="alert('لطفا نام تسهیلات را وارد کنید')"/></td>
             </tr>
             <tr>
-                <td> نرخ سود</td>
+                <td> نرخ سود:</td>
                 <td><input type="text" name="interestRate" required="required"
                            oninvalid="alert('لطفا نرخ سود را وارد کنید')"/></td>
             </tr>
