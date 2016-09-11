@@ -1,7 +1,6 @@
 package dataAccess.entity;
 import javax.persistence.Table;
 import javax.persistence.*;
-
 import javax.persistence.Entity;
 
 /**

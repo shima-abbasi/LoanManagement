@@ -10,7 +10,7 @@
 <div id="LoginHeader"></div>
 <div>
     <form action="select-task.jsp">
-        <input id="Loginbutton" type="submit" value="ورود به سامانه"/>
+        <input id="Loginbutton" type="submit"><span>ورود به سامانه </span></input>
     </form>
 </div>
 </body>
