@@ -1,5 +1,4 @@
 package dataAccess.entity;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -10,16 +9,8 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name = "REAL_CUSTOMER")
-
-public class RealCustomer  implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CUSTOMER_ID", nullable = false, insertable = false, updatable = false, unique = true)
-    private Integer customerId;
-
-    @Column(name = "CUSTOMER_NUMBER", nullable = false, updatable = false, unique = true)
-    private int customerNumber;
+@DiscriminatorValue("realcustomer")
+public class RealCustomer extends Customer {
 
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
@@ -38,31 +29,6 @@ public class RealCustomer  implements Serializable {
 
     @OneToMany(mappedBy = "realCustomer", cascade = {CascadeType.ALL})
     private Set<LoanFile> loanFiles = new HashSet<LoanFile>(0);
-
-    public Integer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
-    }
-
-    public int getCustomerNumber() {
-        return customerNumber;
-    }
-
-    public void setCustomerNumber(int customerNumber) {
-        this.customerNumber = customerNumber;
-    }
-
-    public RealCustomer(int customerNumber, String firstName, String lastName, String fatherName, String dateOfBirth, String internationalID) {
-        this.customerNumber =  customerNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.fatherName = fatherName;
-        this.dateOfBirth = dateOfBirth;
-        this.internationalID = internationalID;
-    }
 
     public RealCustomer() {
     }

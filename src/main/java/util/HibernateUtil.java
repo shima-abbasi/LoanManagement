@@ -1,4 +1,5 @@
 package util;
+import com.fasterxml.classmate.AnnotationConfiguration;
 import dataAccess.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
